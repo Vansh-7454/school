@@ -82,7 +82,7 @@ export const Section = React.forwardRef<HTMLElement, SectionProps>(function Sect
     >
       {/* Top transition divider if requested */}
       {topDivider === "curve" && previousTone && (
-        <CurveDivider toTone={tone} fromTone={previousTone} position="top" />
+        <CurveDivider toTone={previousTone} position="top" />
       )}
       {topDivider === "fade" && previousTone && (
         <GradientFadeDivider fromTone={previousTone} toTone={tone} />

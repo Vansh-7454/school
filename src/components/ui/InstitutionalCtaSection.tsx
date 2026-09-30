@@ -48,13 +48,13 @@ export function InstitutionalCtaSection({
     >
       {/* Curved top transition divider from preceding section */}
       {showTopCurve && (
-        <CurveDivider fromTone={fromTone} toTone="navy" position="top" />
+        <CurveDivider toTone={fromTone} position="top" />
       )}
 
       {/* Ambient background illumination */}
       <div
         aria-hidden="true"
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] rounded-full bg-[#C9A24B]/10 blur-[130px] pointer-events-none"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] rounded-full bg-[#C9A24B]/15 blur-[130px] pointer-events-none"
       />
 
       <div className="relative z-10 py-20 md:py-28">
@@ -67,7 +67,7 @@ export function InstitutionalCtaSection({
           </div>
 
           {/* Heading */}
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] leading-[1.15] text-[#FAF6ED] mb-6">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] leading-[1.15] text-[#FAF6ED] mb-6 drop-shadow-xs">
             {title}{" "}
             <span className="italic text-[#C9A24B] drop-shadow-sm">
               {titleAccent}
@@ -75,7 +75,7 @@ export function InstitutionalCtaSection({
           </h2>
 
           {/* Description */}
-          <p className="text-base sm:text-lg text-cream-100/75 leading-relaxed max-w-2xl mx-auto mb-10">
+          <p className="text-base sm:text-lg text-[#FAF6ED]/85 leading-relaxed max-w-2xl mx-auto mb-10">
             {description}
           </p>
 
@@ -94,7 +94,7 @@ export function InstitutionalCtaSection({
           </div>
 
           {/* Direct admissions helpline footer strip */}
-          <div className="mt-12 pt-8 border-t border-[#C9A24B]/20 flex flex-wrap items-center justify-center gap-6 text-xs text-cream-100/60 font-sans">
+          <div className="mt-12 pt-8 border-t border-[#C9A24B]/20 flex flex-wrap items-center justify-center gap-6 text-xs text-[#FAF6ED]/75 font-sans">
             <div className="flex items-center gap-2">
               <PhoneCall className="w-3.5 h-3.5 text-[#C9A24B]" />
               <span>Admissions Desk: +44 20 7946 0912</span>
