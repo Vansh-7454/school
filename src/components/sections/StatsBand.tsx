@@ -82,11 +82,12 @@ export function StatsBand() {
   return (
     <section
       ref={containerRef}
-      className="relative py-20 md:py-28 bg-gradient-to-b from-[#0B1B3A] via-[#12274A] to-[#0B1B3A] text-cream-100 bg-grain overflow-hidden"
+      style={{ backgroundColor: "#0B1B3A" }}
+      className="relative py-20 md:py-28 bg-[#0B1B3A] text-cream-100 bg-grain overflow-hidden"
     >
       {/* Decorative Gold Ambient Glow */}
       <div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#C9A24B]/10 rounded-full blur-[120px] pointer-events-none"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#C9A24B]/15 rounded-full blur-[120px] pointer-events-none"
         aria-hidden="true"
       />
 
@@ -104,17 +105,17 @@ export function StatsBand() {
                   }`}
                 >
                   {/* Big Number */}
-                  <span className="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal gold-gradient-text tracking-tight block">
+                  <span className="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal gold-gradient-text tracking-tight block drop-shadow-xs">
                     {displayVal}
                   </span>
 
                   {/* Label */}
-                  <span className="font-sans text-xs sm:text-sm font-semibold uppercase tracking-wider text-cream-50 mt-2.5 block">
+                  <span className="font-sans text-xs sm:text-sm font-bold uppercase tracking-wider text-[#FDFBF7] mt-2.5 block">
                     {stat.label}
                   </span>
 
                   {/* Sublabel */}
-                  <span className="text-xs text-cream-100/60 font-light mt-1 block">
+                  <span className="text-xs text-[#FAF6ED]/85 font-normal mt-1 block">
                     {stat.sublabel}
                   </span>
                 </div>

@@ -42,7 +42,10 @@ export function InstitutionalCtaSection({
   fromTone = "white",
 }: InstitutionalCtaSectionProps) {
   return (
-    <section className="relative w-full bg-gradient-to-b from-[#0B1B3A] via-[#12274A] to-[#07122A] text-[#FAF6ED] bg-grain overflow-hidden">
+    <section
+      style={{ backgroundColor: "#0B1B3A" }}
+      className="relative w-full bg-[#0B1B3A] text-[#FAF6ED] bg-grain overflow-hidden"
+    >
       {/* Curved top transition divider from preceding section */}
       {showTopCurve && (
         <CurveDivider fromTone={fromTone} toTone="navy" position="top" />

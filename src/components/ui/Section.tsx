@@ -38,7 +38,7 @@ const TONE_STYLES: Record<
     isDark: false,
   },
   navy: {
-    bgClass: "bg-gradient-to-b from-[#0B1B3A] via-[#12274A] to-[#0B1B3A] bg-grain",
+    bgClass: "bg-[#0B1B3A] bg-grain",
     textClass: "text-[#FAF6ED]",
     isDark: true,
   },
