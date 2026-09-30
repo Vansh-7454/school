@@ -57,29 +57,29 @@ export default async function ParentFeesAndNoticesPage() {
             <span className="text-[#0B1B3A]/80 font-medium">
               Sixth Form Tuition (Academic Core & IB Diploma Framework)
             </span>
-            <span className="font-mono font-bold text-[#0B1B3A]">£9,850.00</span>
+            <span className="font-mono font-bold text-[#0B1B3A]">₹9,85,000.00</span>
           </div>
           <div className="flex items-center justify-between py-2 text-xs sm:text-sm border-b border-[#0B1B3A]/5">
             <span className="text-[#0B1B3A]/80 font-medium">
               Cavendish House Residential Boarding & Dining Amenities
             </span>
-            <span className="font-mono font-bold text-[#0B1B3A]">£5,420.00</span>
+            <span className="font-mono font-bold text-[#0B1B3A]">₹5,42,000.00</span>
           </div>
           <div className="flex items-center justify-between py-2 text-xs sm:text-sm border-b border-[#0B1B3A]/5">
             <span className="text-[#0B1B3A]/80 font-medium">
               Science Laboratory Consumables & Serpentine Regatta Equipment Fee
             </span>
-            <span className="font-mono font-bold text-[#0B1B3A]">£480.00</span>
+            <span className="font-mono font-bold text-[#0B1B3A]">₹48,000.00</span>
           </div>
           <div className="flex items-center justify-between py-2 text-xs sm:text-sm border-b border-[#0B1B3A]/5 text-emerald-700">
             <span className="font-medium">
               Academic Excellence Merit Scholarship Credit (Honorary 15%)
             </span>
-            <span className="font-mono font-bold">-£2,362.50</span>
+            <span className="font-mono font-bold">-₹2,36,250.00</span>
           </div>
           <div className="flex items-center justify-between pt-3 text-sm sm:text-base font-bold text-[#0B1B3A]">
             <span>Net Paid via Direct Debit (Receipt #BACS-99410)</span>
-            <span className="font-mono text-[#C9A24B] text-lg">£13,387.50</span>
+            <span className="font-mono text-[#C9A24B] text-lg">₹13,38,750.00</span>
           </div>
         </div>
 

@@ -6,7 +6,6 @@ import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { Section } from "@/components/ui/Section";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Card } from "@/components/ui/Card";
-import { CurveDivider } from "@/components/ui/Dividers";
 
 interface Leader {
   name: string;
@@ -49,7 +48,7 @@ const LEADERS: Leader[] = [
 
 export function LeadershipSection() {
   return (
-    <Section id="leadership" tone="cream">
+    <Section id="leadership" tone="cream" bottomDivider="curve" nextTone="navy">
       {/* Unified Section Header */}
       <SectionHeader
         eyebrow="Governance & Mentorship"
@@ -90,9 +89,6 @@ export function LeadershipSection() {
           </ScrollReveal>
         ))}
       </div>
-
-      {/* Bottom curve transitioning seamlessly to AboutNumbersStrip (navy) */}
-      <CurveDivider toTone="navy" fromTone="cream" position="bottom" />
     </Section>
   );
 }

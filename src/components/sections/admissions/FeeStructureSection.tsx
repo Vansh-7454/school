@@ -22,8 +22,8 @@ const TIERS: PlanTier[] = [
     name: "Early Years Foundation",
     stage: "Pre-Primary",
     grades: "Nursery, LKG & UKG",
-    annualFee: "£14,800",
-    termFee: "£4,933 / Term (3 Terms)",
+    annualFee: "₹14,80,000",
+    termFee: "₹4,93,333 / Term (3 Terms)",
     tagline: "Nurturing sensory discovery, social play, and foundational inquiry.",
     inclusions: [
       "All learning manipulatives & art media",
@@ -38,8 +38,8 @@ const TIERS: PlanTier[] = [
     name: "Cambridge Lower & Middle",
     stage: "Primary & Middle School",
     grades: "Grades 1 through 8",
-    annualFee: "£18,600",
-    termFee: "£6,200 / Term (3 Terms)",
+    annualFee: "₹18,60,000",
+    termFee: "₹6,20,000 / Term (3 Terms)",
     popular: true,
     tagline: "Building analytical acumen, scientific inquiry, and global literacy.",
     inclusions: [
@@ -56,8 +56,8 @@ const TIERS: PlanTier[] = [
     name: "IGCSE & IB Diploma",
     stage: "Senior Secondary",
     grades: "Grades 9 through 12",
-    annualFee: "£22,400",
-    termFee: "£7,466 / Term (3 Terms)",
+    annualFee: "₹22,40,000",
+    termFee: "₹7,46,666 / Term (3 Terms)",
     tagline: "Pre-university mastery, empirical research, and leadership honours.",
     inclusions: [
       "Advanced wet-lab consumables & high-spec laptop",
@@ -214,7 +214,7 @@ export function FeeStructureSection() {
               <strong className="text-[#0B1B3A] font-semibold">
                 Illustrative Demonstration Disclaimer:
               </strong>{" "}
-              All monetary figures shown above are sample figures provided strictly for website demonstration and planning purposes. Official bespoke fee schedules, sibling fee concessions, and merit-based bursary criteria are available upon request through the Admissions Registrar.
+              All monetary figures shown above are sample INR (₹) figures provided strictly for website demonstration and planning purposes. Official bespoke fee schedules, sibling fee concessions, and merit-based bursary criteria are available upon request through the Admissions Registrar.
             </div>
           </div>
         </ScrollReveal>

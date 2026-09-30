@@ -16,18 +16,29 @@ const STATS = [
 
 export function AboutNumbersStrip() {
   return (
-    <Section id="about-stats" tone="navy">
+    <Section
+      id="about-stats"
+      tone="navy"
+      style={{ backgroundColor: "#0B1B3A" }}
+      className="bg-[#0B1B3A] text-[#FAF6ED]"
+    >
+      {/* Decorative Gold Ambient Glow */}
+      <div
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#C9A24B]/15 rounded-full blur-[120px] pointer-events-none"
+        aria-hidden="true"
+      />
+
       <ScrollReveal direction="up" delay={0.1}>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 pb-16 border-b border-[#C9A24B]/20 text-center">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 pb-16 border-b border-[#C9A24B]/20 text-center relative z-10">
           {STATS.map((s, i) => (
             <div key={i} className="space-y-1">
-              <span className="font-serif text-4xl sm:text-5xl font-bold gold-gradient-text">
+              <span className="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal gold-gradient-text tracking-tight block drop-shadow-xs">
                 {s.value}
               </span>
-              <span className="font-sans text-xs sm:text-sm font-semibold uppercase tracking-wider text-[#FBF6EA] block mt-2">
+              <span className="font-sans text-xs sm:text-sm font-bold uppercase tracking-wider text-[#FDFBF7] block mt-2.5">
                 {s.label}
               </span>
-              <span className="text-[11px] text-[#FBF6EA]/60 block">
+              <span className="text-xs text-[#FAF6ED]/85 font-normal block mt-1">
                 {s.sub}
               </span>
             </div>
@@ -37,13 +48,13 @@ export function AboutNumbersStrip() {
 
       {/* Small Bottom CTA */}
       <ScrollReveal direction="up" delay={0.2}>
-        <div className="pt-12 text-center flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div className="pt-12 text-center flex flex-col sm:flex-row items-center justify-between gap-6 relative z-10">
           <div className="text-left space-y-1">
-            <span className="text-xs font-semibold uppercase tracking-widest text-[#DFBE72] inline-flex items-center gap-1.5">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#DFBE72] inline-flex items-center gap-1.5">
               <Sparkles strokeWidth={1.75} className="w-3.5 h-3.5" />
               Join Our Legacy
             </span>
-            <h3 className="font-serif text-2xl font-medium text-[#FBF6EA]">
+            <h3 className="font-serif text-2xl sm:text-3xl font-semibold text-[#FDFBF7]">
               Are you ready to discover your potential at Aurelia?
             </h3>
           </div>

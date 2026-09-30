@@ -167,7 +167,7 @@ export const STATIC_NOTICES: Array<Omit<Partial<INotice>, "_id"> & { _id: string
     _id: "not-3",
     title: "Cavendish Innovation Pavilion: Robotics & STEM Wing Unveiling",
     slug: "cavendish-innovation-pavilion-unveiling",
-    body: "Following 14 months of construction, the £6.2M Cavendish Innovation Pavilion opens this term. The facility houses high-precision CNC routers, 24 automated wet-lab workstations, a cleanroom for semiconductor studies, and high-altitude weather telemetry.",
+    body: "Following 14 months of construction, the ₹65 Crore Cavendish Innovation Pavilion opens this term. The facility houses high-precision CNC routers, 24 automated wet-lab workstations, a cleanroom for semiconductor studies, and high-altitude weather telemetry.",
     date: new Date("2026-09-26"),
     category: "Campus Facilities",
     important: true,
@@ -269,7 +269,7 @@ export const STATIC_ARTICLES: Array<Omit<Partial<IArticle>, "_id"> & { _id: stri
     title: "The Architecture of Curiosity: Inside the New Cavendish Innovation Pavilion",
     slug: "architecture-of-curiosity-cavendish-pavilion",
     excerpt:
-      "A photographic architectural tour of our new £6.2M STEM complex blending Georgian stone heritage with carbon-neutral design.",
+      "A photographic architectural tour of our new ₹65 Crore STEM complex blending Georgian stone heritage with carbon-neutral design.",
     category: "Campus News",
     author: "Helena Rostova, Director of Development",
     publishedAt: new Date("2026-09-24"),

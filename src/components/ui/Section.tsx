@@ -19,6 +19,13 @@ export interface SectionProps extends React.HTMLAttributes<HTMLElement> {
   nextTone?: DividerTone;
 }
 
+const TONE_HEX: Record<SectionTone, string> = {
+  cream: "#FBF6EA",
+  white: "#FFFFFF",
+  navy: "#0B1B3A",
+  navyDeep: "#07122A",
+};
+
 const TONE_STYLES: Record<
   SectionTone,
   {
@@ -38,12 +45,12 @@ const TONE_STYLES: Record<
     isDark: false,
   },
   navy: {
-    bgClass: "bg-[#0B1B3A] bg-grain",
+    bgClass: "bg-[#0B1B3A]",
     textClass: "text-[#FAF6ED]",
     isDark: true,
   },
   navyDeep: {
-    bgClass: "bg-[#07122A] bg-grain",
+    bgClass: "bg-[#07122A]",
     textClass: "text-[#FAF6ED]",
     isDark: true,
   },
@@ -72,6 +79,10 @@ export const Section = React.forwardRef<HTMLElement, SectionProps>(function Sect
     <section
       ref={ref}
       id={id}
+      style={{
+        backgroundColor: TONE_HEX[tone],
+        ...props.style,
+      }}
       className={cn(
         "relative w-full overflow-hidden transition-colors duration-200",
         currentTone.bgClass,
@@ -91,6 +102,10 @@ export const Section = React.forwardRef<HTMLElement, SectionProps>(function Sect
       {/* Ambient background decoration for dark sections */}
       {currentTone.isDark && (
         <>
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-grain pointer-events-none opacity-40"
+          />
           <div
             aria-hidden="true"
             className="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-[#C9A24B]/5 blur-[120px] pointer-events-none"
