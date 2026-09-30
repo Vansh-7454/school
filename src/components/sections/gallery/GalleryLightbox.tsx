@@ -94,40 +94,40 @@ export function GalleryLightbox({
           animate={{ scale: 1, opacity: 1, y: 0 }}
           exit={{ scale: 0.94, opacity: 0, y: 15 }}
           transition={{ type: "spring", stiffness: 350, damping: 30 }}
-          className="relative z-10 w-full max-w-4xl bg-[#102042] rounded-3xl border border-[#C9A24B]/40 shadow-2xl overflow-hidden flex flex-col md:flex-row max-h-[90vh]"
+          className="relative z-10 w-full max-w-4xl bg-[#102042] rounded-3xl border border-[#C9A24B]/40 shadow-2xl overflow-hidden flex flex-col md:flex-row max-h-[92svh]"
           onClick={(e) => e.stopPropagation()}
         >
-          {/* Close Button */}
+          {/* Close Button: 44px Touch Target */}
           <button
             type="button"
             onClick={onClose}
             aria-label="Close modal"
-            className="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-[#0B1B3A]/80 hover:bg-[#C9A24B] text-white hover:text-[#0B1B3A] flex items-center justify-center transition-colors border border-white/10 focus:outline-none cursor-pointer"
+            className="absolute top-3 right-3 sm:top-4 sm:right-4 z-30 w-11 h-11 min-w-[44px] min-h-[44px] rounded-full bg-[#0B1B3A]/85 hover:bg-[#C9A24B] text-white hover:text-[#0B1B3A] flex items-center justify-center transition-colors border border-white/10 focus:outline-none cursor-pointer shadow-lg active:scale-95"
           >
-            <X className="w-5 h-5 stroke-[2]" />
+            <X className="w-5 h-5 stroke-[2.5]" />
           </button>
 
           {/* Left / Top: Artwork Viewport with Mobile Swipe Support */}
           <div
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
-            className="relative w-full md:w-3/5 bg-[#081226] flex items-center justify-center min-h-[300px] md:min-h-[460px] overflow-hidden select-none"
+            className="relative w-full md:w-3/5 bg-[#081226] flex items-center justify-center min-h-[260px] sm:min-h-[300px] md:min-h-[460px] overflow-hidden select-none"
           >
             <GalleryArtwork
               variant={item.artVariant || "regatta"}
               title={item.title || "Scholastic Art"}
-              className="max-h-[70vh] w-full"
+              className="max-h-[60vh] sm:max-h-[70vh] w-full"
             />
 
-            {/* Navigation Buttons for Artwork */}
+            {/* Navigation Buttons for Artwork (44px touch targets) */}
             {hasPrev && (
               <button
                 type="button"
                 onClick={onPrev}
                 aria-label="Previous artwork"
-                className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-[#0B1B3A]/80 hover:bg-[#C9A24B] text-white hover:text-[#0B1B3A] flex items-center justify-center transition-all border border-white/10 shadow-lg cursor-pointer"
+                className="absolute left-2.5 sm:left-3 top-1/2 -translate-y-1/2 w-11 h-11 min-w-[44px] min-h-[44px] rounded-full bg-[#0B1B3A]/85 hover:bg-[#C9A24B] text-white hover:text-[#0B1B3A] flex items-center justify-center transition-all border border-white/10 shadow-lg cursor-pointer active:scale-95 z-20"
               >
-                <ChevronLeft className="w-5 h-5 stroke-[2.5]" />
+                <ChevronLeft className="w-6 h-6 stroke-[2.5]" />
               </button>
             )}
 
@@ -136,9 +136,9 @@ export function GalleryLightbox({
                 type="button"
                 onClick={onNext}
                 aria-label="Next artwork"
-                className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-[#0B1B3A]/80 hover:bg-[#C9A24B] text-white hover:text-[#0B1B3A] flex items-center justify-center transition-all border border-white/10 shadow-lg cursor-pointer"
+                className="absolute right-2.5 sm:right-3 top-1/2 -translate-y-1/2 w-11 h-11 min-w-[44px] min-h-[44px] rounded-full bg-[#0B1B3A]/85 hover:bg-[#C9A24B] text-white hover:text-[#0B1B3A] flex items-center justify-center transition-all border border-white/10 shadow-lg cursor-pointer active:scale-95 z-20"
               >
-                <ChevronRight className="w-5 h-5 stroke-[2.5]" />
+                <ChevronRight className="w-6 h-6 stroke-[2.5]" />
               </button>
             )}
           </div>

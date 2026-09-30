@@ -21,6 +21,28 @@ export function PortalTopBar({ user }: PortalTopBarProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [userDropdown, setUserDropdown] = useState(false);
 
+  // Lock body scroll and handle Escape key when mobile sidebar is open
+  React.useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setMobileOpen(false);
+        setUserDropdown(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [mobileOpen]);
+
   const initials = user.name
     ? user.name
         .split(" ")
@@ -38,13 +60,13 @@ export function PortalTopBar({ user }: PortalTopBarProps) {
 
   return (
     <>
-      <header className="sticky top-0 z-40 w-full h-16 bg-[#0B1B3A] border-b border-[#C9A24B]/30 px-4 sm:px-6 lg:px-8 flex items-center justify-between shadow-md">
+      <header className="sticky top-0 z-40 w-full h-16 bg-[#0B1B3A] border-b border-[#C9A24B]/30 px-3 sm:px-6 lg:px-8 flex items-center justify-between shadow-md">
         {/* Left Side: Brand and Portal Badge */}
-        <div className="flex items-center gap-3 sm:gap-4">
+        <div className="flex items-center gap-2 sm:gap-4">
           <button
             type="button"
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="p-2 -ml-2 rounded-xl text-cream-100 hover:text-[#C9A24B] hover:bg-white/5 lg:hidden focus:outline-none"
+            className="w-11 h-11 min-w-[44px] min-h-[44px] rounded-xl text-white hover:text-[#C9A24B] hover:bg-white/5 lg:hidden flex items-center justify-center focus:outline-none cursor-pointer"
             aria-label="Toggle Portal Sidebar"
           >
             {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -130,15 +152,16 @@ export function PortalTopBar({ user }: PortalTopBarProps) {
             className="fixed inset-0 bg-black/60 backdrop-blur-xs"
             onClick={() => setMobileOpen(false)}
           />
-          <div className="relative w-72 max-w-xs h-full bg-[#0B1B3A] z-10 shadow-2xl flex flex-col">
-            <div className="p-4 border-b border-white/10 flex items-center justify-between">
+          <div className="relative w-72 max-w-[85vw] h-[100svh] bg-[#0B1B3A] z-10 shadow-2xl flex flex-col">
+            <div className="p-3 sm:p-4 border-b border-white/10 flex items-center justify-between">
               <span className="text-xs font-bold uppercase tracking-wider text-[#C9A24B]">
                 Portal Navigation
               </span>
               <button
                 type="button"
                 onClick={() => setMobileOpen(false)}
-                className="p-1 rounded-lg text-cream-100 hover:bg-white/10"
+                className="w-11 h-11 min-w-[44px] min-h-[44px] rounded-lg text-white hover:bg-white/10 flex items-center justify-center cursor-pointer"
+                aria-label="Close Portal Sidebar"
               >
                 <X className="w-5 h-5" />
               </button>

@@ -171,7 +171,7 @@ export function Logo({
           </span>
           <span
             className={cn(
-              "font-sans font-semibold tracking-[0.28em] uppercase leading-tight mt-0.5",
+              "font-sans font-semibold tracking-[0.28em] uppercase leading-tight mt-0.5 hidden min-[420px]:block",
               dimensions.sub,
               variant === "light" ? "text-gold-300" : "text-gold-600"
             )}

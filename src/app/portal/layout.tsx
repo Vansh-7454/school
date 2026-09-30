@@ -29,14 +29,14 @@ export default async function PortalLayout({
   const user = session.user;
 
   return (
-    <div className="min-h-screen bg-[#FBF6EA] flex flex-col">
+    <div className="min-h-[100svh] bg-[#FBF6EA] flex flex-col">
       {/* Slim Top Bar */}
       <PortalTopBar user={user} />
 
       {/* Main Workspace with Sidebar and Content Area */}
       <div className="flex-1 flex w-full max-w-[1920px] mx-auto">
         {/* Desktop Sidebar (Left column) */}
-        <div className="hidden lg:block w-64 shrink-0 min-h-[calc(100vh-4rem)]">
+        <div className="hidden lg:block w-64 shrink-0 min-h-[calc(100svh-4rem)]">
           <PortalSidebar role={user.role} />
         </div>
 

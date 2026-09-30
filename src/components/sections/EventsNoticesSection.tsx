@@ -60,8 +60,8 @@ export async function EventsNoticesSection() {
           </p>
         </div>
 
-        <Link href="/news-events">
-          <Button variant="secondary" className="shrink-0">
+        <Link href="/news-events" className="w-full sm:w-auto">
+          <Button variant="secondary" className="w-full sm:w-auto shrink-0">
             <span>View All Calendar Events</span>
             <ArrowRight strokeWidth={1.75} className="w-4 h-4" />
           </Button>
@@ -173,7 +173,7 @@ export async function EventsNoticesSection() {
           </Card>
 
           {/* Quick Link Card to Portal Notices */}
-          <div className="p-4 rounded-[20px] bg-[#0B1B3A] text-[#FBF6EA] flex items-center justify-between gap-4 border border-[#C9A24B]/30 shadow-md">
+          <div className="p-4 rounded-[20px] bg-[#0B1B3A] text-[#FBF6EA] flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 border border-[#C9A24B]/30 shadow-md">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl bg-[#C9A24B]/15 border border-[#C9A24B]/30 flex items-center justify-center text-[#DFBE72] shrink-0">
                 <Bell strokeWidth={1.75} className="w-5 h-5" />
@@ -183,8 +183,8 @@ export async function EventsNoticesSection() {
                 <p className="text-[#FBF6EA]/60">Log in to view internal circulars</p>
               </div>
             </div>
-            <Link href="/portal">
-              <Button variant="primary" className="h-9 px-4 text-xs">
+            <Link href="/portal" className="w-full sm:w-auto">
+              <Button variant="primary" className="w-full sm:w-auto min-h-[44px] h-11 px-5 text-xs">
                 Access
               </Button>
             </Link>

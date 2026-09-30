@@ -130,7 +130,7 @@ export default async function EventDetailPage({ params }: EventDetailPageProps) 
         </div>
 
         {/* Main Event Article Card */}
-        <div className="bg-white rounded-3xl p-8 sm:p-12 border border-[#0B1B3A]/10 shadow-xl space-y-8">
+        <div className="bg-white rounded-3xl p-5 sm:p-10 md:p-12 border border-[#0B1B3A]/10 shadow-xl space-y-6 sm:space-y-8">
           {/* Header Block */}
           <div className="space-y-4">
             <div className="flex flex-wrap items-center gap-3">

@@ -246,11 +246,11 @@ export function PageHero({
       </div>
 
       {/* Main Foreground Content */}
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-5">
+      <div className="max-w-5xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10 text-center space-y-4 sm:space-y-5">
         {/* Breadcrumb Navigation */}
         <ScrollReveal direction="up" delay={0.05}>
-          <nav aria-label="Breadcrumb" className="inline-flex items-center gap-1.5 text-xs text-cream-100/70 mb-1">
-            <Link href="/" className="hover:text-gold-300 transition-colors inline-flex items-center gap-1">
+          <nav aria-label="Breadcrumb" className="inline-flex items-center gap-1.5 text-xs text-cream-100/70 mb-1 flex-wrap justify-center">
+            <Link href="/" className="hover:text-gold-300 transition-colors inline-flex items-center gap-1 py-1">
               <Home className="w-3.5 h-3.5" />
               <span>Home</span>
             </Link>
@@ -258,11 +258,11 @@ export function PageHero({
               <React.Fragment key={idx}>
                 <ChevronRight className="w-3 h-3 text-gold-400/60" />
                 {crumb.href ? (
-                  <Link href={crumb.href} className="hover:text-gold-300 transition-colors">
+                  <Link href={crumb.href} className="hover:text-gold-300 transition-colors py-1">
                     {crumb.label}
                   </Link>
                 ) : (
-                  <span className="text-gold-300 font-semibold">{crumb.label}</span>
+                  <span className="text-gold-300 font-semibold py-1">{crumb.label}</span>
                 )}
               </React.Fragment>
             ))}
@@ -278,7 +278,7 @@ export function PageHero({
 
         {/* Big Serif Page Title */}
         <ScrollReveal direction="up" delay={0.15}>
-          <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-cream-50 leading-[1.1]">
+          <h1 className="font-serif text-[clamp(2rem,6vw,3.75rem)] font-extrabold tracking-tight text-cream-50 leading-[1.15]">
             {title}{" "}
             {titleAccent && (
               <span className="gold-gradient-text block sm:inline">{titleAccent}</span>
@@ -288,7 +288,7 @@ export function PageHero({
 
         {/* One-Line Description */}
         <ScrollReveal direction="up" delay={0.2}>
-          <p className="max-w-2xl mx-auto text-base sm:text-lg text-cream-100/80 font-normal leading-relaxed">
+          <p className="max-w-2xl mx-auto text-sm sm:text-base md:text-lg text-cream-100/80 font-normal leading-relaxed">
             {description}
           </p>
         </ScrollReveal>

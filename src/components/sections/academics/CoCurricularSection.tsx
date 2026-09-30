@@ -184,9 +184,9 @@ export function CoCurricularSection() {
         align="center"
       />
 
-      {/* Filter Chips */}
+      {/* Filter Chips - horizontally scrollable row on mobile */}
       <ScrollReveal delay={0.1}>
-        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-12">
+        <div className="flex items-center justify-start sm:justify-center gap-2 sm:gap-3 mb-10 overflow-x-auto pb-2 scrollbar-none px-4 -mx-4 sm:mx-0 snap-x">
           {CATEGORIES.map((cat) => {
             const isActive = activeCategory === cat;
             return (
@@ -194,7 +194,7 @@ export function CoCurricularSection() {
                 key={cat}
                 type="button"
                 onClick={() => setActiveCategory(cat)}
-                className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wide transition-all duration-300 relative cursor-pointer ${
+                className={`min-h-[44px] px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wide transition-all duration-300 relative cursor-pointer whitespace-nowrap snap-start flex items-center justify-center ${
                   isActive
                     ? "bg-[#0B1B3A] text-white shadow-md shadow-[#0B1B3A]/20"
                     : "bg-white text-[#0B1B3A]/70 border border-[#C9A24B]/30 hover:border-[#C9A24B] hover:text-[#0B1B3A]"

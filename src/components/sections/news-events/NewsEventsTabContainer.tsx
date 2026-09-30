@@ -54,9 +54,9 @@ export function NewsEventsTabContainer({
   return (
     <Section tone="cream" className="py-16 md:py-24 min-h-screen">
       <Container>
-        {/* Tab Switcher Header */}
-        <div className="flex items-center justify-center mb-12 sm:mb-16">
-          <div className="inline-flex items-center p-1.5 rounded-full bg-white border border-[#0B1B3A]/10 shadow-sm relative">
+        {/* Tab Switcher Header (Horizontal scroll with snap on mobile) */}
+        <div className="flex items-center justify-start sm:justify-center mb-8 sm:mb-16 overflow-x-auto pb-2 scrollbar-none snap-x px-2 -mx-2 sm:mx-0">
+          <div className="inline-flex items-center p-1 sm:p-1.5 rounded-2xl sm:rounded-full bg-white border border-[#0B1B3A]/10 shadow-sm relative shrink-0">
             {TABS.map((tab) => {
               const Icon = tab.icon;
               const isActive = activeTab === tab.id;
@@ -66,11 +66,11 @@ export function NewsEventsTabContainer({
                   key={tab.id}
                   type="button"
                   onClick={() => handleTabChange(tab.id)}
-                  className={`relative px-5 sm:px-7 py-3 rounded-xl text-xs sm:text-sm font-bold tracking-wide transition-colors flex items-center gap-2 cursor-pointer z-10 ${
+                  className={`relative min-h-[44px] px-3.5 sm:px-7 py-2.5 sm:py-3 rounded-xl text-xs sm:text-sm font-bold tracking-wide transition-colors flex items-center justify-center gap-1.5 sm:gap-2 cursor-pointer z-10 whitespace-nowrap snap-start shrink-0 ${
                     isActive ? "text-[#0B1B3A]" : "text-[#0B1B3A]/60 hover:text-[#0B1B3A]"
                   }`}
                 >
-                  <Icon className={`w-4 h-4 ${isActive ? "text-[#C9A24B]" : "text-[#0B1B3A]/40"}`} />
+                  <Icon className={`w-4 h-4 shrink-0 ${isActive ? "text-[#C9A24B]" : "text-[#0B1B3A]/40"}`} />
                   <span>{tab.label}</span>
 
                   {isActive && (

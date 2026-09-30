@@ -101,9 +101,8 @@ export function DayTimelineSection() {
   const trackRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Only initialise desktop pinning on wide screens (> 1024px) without reduced motion
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (prefersReducedMotion || window.innerWidth < 1024) return;
+    if (prefersReducedMotion) return;
 
     gsap.registerPlugin(ScrollTrigger);
 
@@ -111,11 +110,11 @@ export function DayTimelineSection() {
     const track = trackRef.current;
     if (!section || !track) return;
 
-    // Total horizontal scroll amount
-    const scrollAmount = track.scrollWidth - window.innerWidth + 120;
+    const mm = gsap.matchMedia();
 
-    const ctx = gsap.context(() => {
-      gsap.to(track, {
+    mm.add("(min-width: 1024px)", () => {
+      const scrollAmount = track.scrollWidth - window.innerWidth + 120;
+      const tween = gsap.to(track, {
         x: -scrollAmount,
         ease: "none",
         scrollTrigger: {
@@ -127,10 +126,14 @@ export function DayTimelineSection() {
           invalidateOnRefresh: true,
         },
       });
-    }, section);
+
+      return () => {
+        tween.kill();
+      };
+    });
 
     return () => {
-      ctx.revert();
+      mm.revert();
     };
   }, []);
 

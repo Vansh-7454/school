@@ -22,9 +22,9 @@ const GALLERY_TILES: GalleryTile[] = [
     title: "Inter-House Sports Gala & Regatta",
     category: "Athletics",
     gradientClass: "from-blue-900 via-indigo-900 to-navy-950",
-    spanClass: "md:col-span-2 md:row-span-2",
+    spanClass: "col-span-2 md:col-span-2 md:row-span-2",
     iconSvg: (
-      <svg viewBox="0 0 120 120" fill="none" className="w-24 h-24 opacity-80" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 120 120" fill="none" className="w-20 sm:w-24 h-20 sm:h-24 opacity-80" xmlns="http://www.w3.org/2000/svg">
         <circle cx="60" cy="60" r="50" stroke="#C9A24B" strokeWidth="1.5" strokeDasharray="3 3" />
         <path d="M 30 80 Q 60 40 90 80" stroke="#DFBE72" strokeWidth="3" fill="none" strokeLinecap="round" />
         <circle cx="60" cy="40" r="10" fill="#DFBE72" />
@@ -123,9 +123,9 @@ export function GalleryPreviewSection() {
           </div>
         </ScrollReveal>
 
-        <ScrollReveal direction="up" delay={0.15}>
-          <Link href="/gallery">
-            <Button variant="secondary" className="shrink-0">
+        <ScrollReveal direction="up" delay={0.15} className="w-full sm:w-auto">
+          <Link href="/gallery" className="w-full sm:w-auto">
+            <Button variant="secondary" className="w-full sm:w-auto shrink-0">
               <span>View Full Gallery</span>
               <ArrowRight strokeWidth={1.75} className="w-4 h-4" />
             </Button>
@@ -133,17 +133,17 @@ export function GalleryPreviewSection() {
         </ScrollReveal>
       </div>
 
-      {/* Masonry / Bento Grid of 6 Tiles */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[240px]">
+      {/* Masonry / Bento Grid: 2 columns on phones, 3 columns on tablet/desktop */}
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-3.5 sm:gap-6 auto-rows-[160px] sm:auto-rows-[240px]">
         {GALLERY_TILES.map((tile, idx) => (
           <ScrollReveal
             key={idx}
             direction="up"
-            delay={0.1 + idx * 0.07}
+            delay={0.05 + idx * 0.05}
             className={tile.spanClass}
           >
             <div
-              className={`group relative w-full h-full rounded-[24px] bg-gradient-to-br ${tile.gradientClass} border border-[#C9A24B]/30 overflow-hidden shadow-subtle hover:shadow-2xl hover:border-[#C9A24B] transition-all duration-300 flex items-center justify-center`}
+              className={`group relative w-full h-full rounded-[20px] sm:rounded-[24px] bg-gradient-to-br ${tile.gradientClass} border border-[#C9A24B]/30 overflow-hidden shadow-subtle hover:shadow-2xl hover:border-[#C9A24B] transition-all duration-300 flex items-center justify-center`}
             >
               {/* Visual Icon Illustration */}
               <div className="transform group-hover:scale-110 transition-transform duration-500">
@@ -151,16 +151,16 @@ export function GalleryPreviewSection() {
               </div>
 
               {/* Always visible base category tag */}
-              <div className="absolute top-4 left-4 z-10">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#07122A]/80 border border-[#C9A24B]/30 text-[#DFBE72] text-[10px] font-semibold tracking-widest uppercase backdrop-blur-sm">
+              <div className="absolute top-2.5 left-2.5 sm:top-4 sm:left-4 z-10">
+                <span className="inline-flex items-center gap-1 sm:gap-1.5 px-2 sm:px-3 py-0.5 sm:py-1 rounded-full bg-[#07122A]/80 border border-[#C9A24B]/30 text-[#DFBE72] text-[9px] sm:text-[10px] font-semibold tracking-widest uppercase backdrop-blur-sm">
                   <Sparkles strokeWidth={1.75} className="w-2.5 h-2.5" />
                   <span>{tile.category}</span>
                 </span>
               </div>
 
               {/* Permanent subtle bottom caption */}
-              <div className="absolute bottom-4 left-4 right-4 z-10 pointer-events-none group-hover:opacity-0 transition-opacity duration-300">
-                <h4 className="font-serif text-lg font-medium text-[#FBF6EA] truncate">
+              <div className="absolute bottom-2.5 left-2.5 right-2.5 sm:bottom-4 sm:left-4 sm:right-4 z-10 pointer-events-none group-hover:opacity-0 transition-opacity duration-300">
+                <h4 className="font-serif text-xs sm:text-lg font-medium text-[#FBF6EA] truncate">
                   {tile.title}
                 </h4>
               </div>

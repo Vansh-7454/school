@@ -37,7 +37,7 @@ export default async function TeacherSchedulePage() {
           return (
             <div
               key={day}
-              className="bg-white rounded-3xl p-6 sm:p-8 border border-[#0B1B3A]/10 shadow-xs space-y-4"
+              className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-8 border border-[#0B1B3A]/10 shadow-xs space-y-4"
             >
               <div className="flex items-center justify-between pb-3 border-b border-[#0B1B3A]/10">
                 <div className="flex items-center gap-2.5">

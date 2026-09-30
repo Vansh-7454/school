@@ -83,7 +83,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en" className={`${cormorant.variable} ${inter.variable}`}>
-      <body className="min-h-screen bg-[#FDFBF7] text-[#0B1B3A] antialiased selection:bg-gold-500/30 selection:text-navy-950 flex flex-col">
+      <body className="min-h-[100svh] bg-[#FDFBF7] text-[#0B1B3A] antialiased selection:bg-gold-500/30 selection:text-navy-950 flex flex-col">
         {/* Skip to Main Content Link for Keyboard Accessibility */}
         <a
           href="#main-content"

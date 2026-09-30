@@ -17,7 +17,7 @@ interface ResultsBarChartProps {
 
 export function ResultsBarChart({ results }: ResultsBarChartProps) {
   return (
-    <div className="bg-white rounded-3xl p-6 sm:p-8 border border-[#0B1B3A]/10 shadow-xs space-y-6">
+    <div className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-8 border border-[#0B1B3A]/10 shadow-xs space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-[#0B1B3A]/10">
         <div>
           <span className="text-xs font-bold uppercase tracking-wider text-[#C9A24B]">

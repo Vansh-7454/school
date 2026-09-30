@@ -69,7 +69,7 @@ export function FullEnquiryForm() {
 
         {/* Form Card or Success Screen */}
         <ScrollReveal delay={0.1}>
-          <Card variant="dark" className="p-8 sm:p-12 relative">
+          <Card variant="dark" className="p-5 sm:p-10 md:p-12 relative">
             {isSubmitted ? (
               /* Success Screen */
               <div className="text-center py-10 sm:py-14 space-y-6">

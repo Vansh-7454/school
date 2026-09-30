@@ -60,6 +60,17 @@ export function Navbar({ session }: NavbarProps = {}) {
     return () => clearTimeout(timer);
   }, [pathname]);
 
+  // Close mobile menu on Escape key press
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setMobileMenuOpen(false);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
   // Lock body scroll when mobile menu is active
   useEffect(() => {
     if (mobileMenuOpen) {
@@ -198,11 +209,11 @@ export function Navbar({ session }: NavbarProps = {}) {
             <div className="flex items-center gap-2 lg:hidden">
               <Link
                 href={user ? `/portal/${user.role}` : "/login"}
-                className="inline-flex items-center justify-center p-2 rounded-full text-gold-300 border border-gold-400/30 bg-navy-800/80"
+                className="w-11 h-11 min-w-[44px] min-h-[44px] inline-flex items-center justify-center rounded-full text-gold-300 border border-gold-400/30 bg-navy-800/80 transition-transform active:scale-95"
                 aria-label={user ? "My Portal" : "Login"}
               >
                 {user ? (
-                  <div className="w-5 h-5 rounded-full bg-gold-400 text-navy-950 font-bold text-[10px] flex items-center justify-center">
+                  <div className="w-6 h-6 rounded-full bg-gold-400 text-navy-950 font-bold text-xs flex items-center justify-center">
                     {userInitials}
                   </div>
                 ) : (
@@ -213,7 +224,7 @@ export function Navbar({ session }: NavbarProps = {}) {
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-2 rounded-full text-cream-100 hover:text-gold-300 bg-white/5 hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-gold-400/50"
+                className="w-11 h-11 min-w-[44px] min-h-[44px] inline-flex items-center justify-center rounded-full text-cream-100 hover:text-gold-300 bg-white/5 hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-gold-400/50 cursor-pointer"
                 aria-expanded={mobileMenuOpen}
                 aria-label="Toggle navigation menu"
               >
@@ -238,7 +249,7 @@ export function Navbar({ session }: NavbarProps = {}) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-0 z-40 lg:hidden bg-[#0B1B3A]/95 backdrop-blur-2xl flex flex-col justify-between pt-20 pb-8 px-6 overflow-y-auto"
+            className="fixed inset-0 z-40 lg:hidden bg-[#0B1B3A]/95 backdrop-blur-2xl flex flex-col justify-between pt-20 pb-8 px-6 overflow-y-auto h-[100svh]"
           >
             {/* Mobile Navigation Links */}
             <motion.nav

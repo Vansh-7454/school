@@ -112,7 +112,7 @@ export function LoginForm() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="name@student.aureliaschool.org"
-              className="w-full h-12 pl-10 pr-4 rounded-[14px] border border-[#0B1B3A]/15 bg-white text-[#0B1B3A] text-sm placeholder:text-[#0B1B3A]/30 focus:outline-none focus:ring-2 focus:ring-[#C9A24B] focus:border-transparent transition-all shadow-xs"
+              className="w-full h-12 pl-10 pr-4 rounded-[14px] border border-[#0B1B3A]/15 bg-white text-[#0B1B3A] text-base sm:text-sm placeholder:text-[#0B1B3A]/30 focus:outline-none focus:ring-2 focus:ring-[#C9A24B] focus:border-transparent transition-all shadow-xs"
             />
           </div>
         </div>
@@ -143,12 +143,12 @@ export function LoginForm() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="••••••••••••"
-              className="w-full h-12 pl-10 pr-11 rounded-[14px] border border-[#0B1B3A]/15 bg-white text-[#0B1B3A] text-sm placeholder:text-[#0B1B3A]/30 focus:outline-none focus:ring-2 focus:ring-[#C9A24B] focus:border-transparent transition-all shadow-xs"
+              className="w-full h-12 pl-10 pr-12 rounded-[14px] border border-[#0B1B3A]/15 bg-white text-[#0B1B3A] text-base sm:text-sm placeholder:text-[#0B1B3A]/30 focus:outline-none focus:ring-2 focus:ring-[#C9A24B] focus:border-transparent transition-all shadow-xs"
             />
             <button
               type="button"
               onClick={() => setShowPassword(!showPassword)}
-              className="absolute inset-y-0 right-0 pr-3.5 flex items-center text-[#0B1B3A]/40 hover:text-[#0B1B3A] transition-colors focus:outline-none cursor-pointer"
+              className="absolute inset-y-0 right-0 w-12 flex items-center justify-center text-[#0B1B3A]/40 hover:text-[#0B1B3A] transition-colors focus:outline-none cursor-pointer"
               aria-label={showPassword ? "Hide password" : "Show password"}
             >
               {showPassword ? (
@@ -164,7 +164,7 @@ export function LoginForm() {
         <button
           type="submit"
           disabled={isPending}
-          className="w-full h-12 px-6 rounded-full bg-[#0B1B3A] hover:bg-[#162A56] text-[#FBF6EA] font-semibold text-xs uppercase tracking-wider transition-all duration-300 shadow-md hover:shadow-lg disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2 cursor-pointer"
+          className="w-full min-h-[48px] h-12 px-6 rounded-full bg-[#0B1B3A] hover:bg-[#162A56] text-[#FBF6EA] font-semibold text-xs uppercase tracking-wider transition-all duration-300 shadow-md hover:shadow-lg disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2 cursor-pointer"
         >
           {isPending ? (
             <>
@@ -190,7 +190,7 @@ export function LoginForm() {
         <button
           type="button"
           onClick={() => setDemoOpen(!demoOpen)}
-          className="w-full flex items-center justify-between text-left group cursor-pointer focus:outline-none"
+          className="w-full min-h-[44px] flex items-center justify-between text-left group cursor-pointer focus:outline-none py-1"
           aria-expanded={demoOpen}
         >
           <div className="flex items-center gap-2">
@@ -207,21 +207,29 @@ export function LoginForm() {
         {demoOpen && (
           <div className="mt-3.5 space-y-2.5 pt-3 border-t border-[#C9A24B]/20 animate-in fade-in duration-200">
             <p className="text-[11px] text-[#0B1B3A]/70 mb-2">
-              Select any role to autofill seeded credentials:
+              Tap any role card to autofill seeded credentials:
             </p>
             {DEMO_ACCOUNTS.map((acc) => {
               const Icon = acc.icon;
               return (
                 <div
                   key={acc.role}
-                  className="flex items-center justify-between gap-2 p-2.5 rounded-xl bg-white/80 border border-[#0B1B3A]/10 hover:border-[#C9A24B] transition-all"
+                  onClick={() => handleFillDemo(acc.email, acc.password)}
+                  className="flex items-center justify-between gap-2 p-2.5 sm:p-3 rounded-xl bg-white/80 border border-[#0B1B3A]/10 hover:border-[#C9A24B] active:bg-[#C9A24B]/10 transition-all cursor-pointer select-none"
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      handleFillDemo(acc.email, acc.password);
+                    }
+                  }}
                 >
                   <div className="flex items-center gap-2.5 min-w-0">
-                    <div className="w-7 h-7 rounded-lg bg-[#0B1B3A] text-[#C9A24B] flex items-center justify-center shrink-0">
-                      <Icon className="w-3.5 h-3.5" />
+                    <div className="w-8 h-8 rounded-lg bg-[#0B1B3A] text-[#C9A24B] flex items-center justify-center shrink-0">
+                      <Icon className="w-4 h-4" />
                     </div>
                     <div className="min-w-0">
-                      <div className="flex items-center gap-1.5">
+                      <div className="flex items-center gap-1.5 flex-wrap">
                         <span className="font-bold text-xs text-[#0B1B3A] truncate">
                           {acc.name}
                         </span>
@@ -239,8 +247,11 @@ export function LoginForm() {
 
                   <button
                     type="button"
-                    onClick={() => handleFillDemo(acc.email, acc.password)}
-                    className="shrink-0 px-2.5 py-1 rounded-lg bg-[#0B1B3A]/5 hover:bg-[#C9A24B] hover:text-[#0B1B3A] text-[#0B1B3A] text-[10px] font-bold uppercase tracking-wider transition-colors cursor-pointer border border-[#0B1B3A]/10"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleFillDemo(acc.email, acc.password);
+                    }}
+                    className="shrink-0 min-h-[44px] px-3.5 rounded-lg bg-[#0B1B3A]/5 hover:bg-[#C9A24B] hover:text-[#0B1B3A] text-[#0B1B3A] text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer border border-[#0B1B3A]/10 flex items-center justify-center"
                   >
                     Fill
                   </button>

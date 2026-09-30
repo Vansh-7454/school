@@ -121,9 +121,9 @@ export function NewsTabContent({
       )}
 
       {/* Filter and Search Bar */}
-      <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 p-4 rounded-2xl bg-white border border-[#0B1B3A]/10 shadow-sm">
-        {/* Category Chips */}
-        <div className="flex flex-wrap items-center gap-2">
+      <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 p-3 sm:p-4 rounded-2xl bg-white border border-[#0B1B3A]/10 shadow-sm">
+        {/* Category Chips - horizontally scrollable row on mobile */}
+        <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto pb-1 scrollbar-none snap-x">
           {CATEGORIES.map((cat) => {
             const isActive = activeCategory === cat;
             return (
@@ -133,7 +133,7 @@ export function NewsTabContent({
                   setActiveCategory(cat);
                   setVisibleCount(6);
                 }}
-                className={`px-4 py-2 rounded-full text-xs font-semibold tracking-wide transition-all ${
+                className={`min-h-[44px] px-3.5 sm:px-4 py-2 rounded-full text-xs font-semibold tracking-wide transition-all shrink-0 snap-start whitespace-nowrap cursor-pointer flex items-center justify-center ${
                   isActive
                     ? "bg-[#0B1B3A] text-white"
                     : "bg-[#FAF8F5] text-[#0B1B3A]/70 hover:bg-white hover:text-[#0B1B3A] border border-[#0B1B3A]/5"
@@ -145,7 +145,7 @@ export function NewsTabContent({
           })}
         </div>
 
-        {/* Search Input */}
+        {/* Search Input - full width on mobile */}
         <div className="relative w-full md:w-72">
           <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[#0B1B3A]/40">
             <Search className="w-4 h-4" />
@@ -158,7 +158,7 @@ export function NewsTabContent({
               setVisibleCount(6);
             }}
             placeholder="Search articles, topics..."
-            className="w-full pl-9 pr-4 py-2 rounded-xl bg-[#FAF8F5] border border-[#0B1B3A]/10 text-xs text-[#0B1B3A] placeholder-[#0B1B3A]/40 focus:outline-none focus:ring-2 focus:ring-[#C9A24B] focus:border-[#C9A24B]"
+            className="w-full h-11 min-h-[44px] pl-9 pr-4 rounded-xl bg-[#FAF8F5] border border-[#0B1B3A]/10 text-base sm:text-xs text-[#0B1B3A] placeholder-[#0B1B3A]/40 focus:outline-none focus:ring-2 focus:ring-[#C9A24B] focus:border-[#C9A24B]"
           />
         </div>
       </div>

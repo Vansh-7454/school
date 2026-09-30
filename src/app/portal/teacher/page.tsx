@@ -83,7 +83,7 @@ export default async function TeacherOverviewPage() {
       </div>
 
       {/* Class Allocations Section */}
-      <div className="bg-white rounded-3xl p-6 sm:p-8 border border-[#0B1B3A]/10 shadow-xs space-y-6">
+      <div className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-8 border border-[#0B1B3A]/10 shadow-xs space-y-6">
         <div className="flex items-center justify-between pb-3 border-b border-[#0B1B3A]/10">
           <div className="flex items-center gap-2.5">
             <BookOpen className="w-5 h-5 text-[#C9A24B]" />
@@ -93,7 +93,7 @@ export default async function TeacherOverviewPage() {
           </div>
           <Link
             href="/portal/teacher/classes"
-            className="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-[#C9A24B] hover:text-[#0B1B3A] transition-colors"
+            className="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-[#C9A24B] hover:text-[#0B1B3A] transition-colors min-h-[44px] py-2"
           >
             <span>All Classes</span>
             <ArrowRight className="w-3.5 h-3.5" />

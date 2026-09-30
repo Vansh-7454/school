@@ -164,3 +164,31 @@ The seeded database includes accounts for all three school roles:
 4. **Rate Limiting**: In-memory rate limiting shields authentication and form dispatch endpoints.
 5. **Zero Layout Shifts**: Navbar height dynamically matched, responsive media uses Next.js Image with reserved aspect ratios, and fonts use `display: swap`.
 6. **Accessibility (WCAG AA)**: Skip-to-content links, gold `:focus-visible` rings on all interactive elements, `aria-live` polite regions for toasts and notifications, and full keyboard navigation.
+
+---
+
+## 📱 Local Phone Testing on Same Wi-Fi
+
+To test Aurelia International School directly on an actual physical phone connected to your local Wi-Fi:
+
+1. **Find your computer's local IP address**:
+   - **Windows**: Run `ipconfig` in PowerShell / Command Prompt and note the IPv4 Address (e.g. `192.168.1.45`).
+   - **macOS / Linux**: Run `ifconfig` or `ip a` (e.g. `192.168.1.45`).
+
+2. **Start the Next.js dev server bound to all network interfaces**:
+   ```bash
+   npm run dev -- -H 0.0.0.0
+   # or
+   npx next dev -H 0.0.0.0
+   ```
+
+3. **Open the site on your phone's browser**:
+   Navigate to:
+   ```text
+   http://<your-computer-ip>:3000
+   # Example: http://192.168.1.45:3000
+   ```
+
+4. **Wi-Fi / Firewall note**:
+   Ensure both devices are on the same Wi-Fi network and that your local firewall permits inbound TCP connections on port `3000`. `next.config.ts` has been preconfigured with `allowedDevOrigins` to accept requests from your local subnet without warning.
+

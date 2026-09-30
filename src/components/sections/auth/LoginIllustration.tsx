@@ -6,44 +6,46 @@ import { Sparkles, ShieldCheck } from "lucide-react";
 
 export function LoginIllustration() {
   return (
-    <div className="relative w-full h-full flex flex-col justify-between p-8 sm:p-12 lg:p-16 overflow-hidden bg-[#0B1B3A] text-white">
+    <div className="relative w-full h-full flex flex-col justify-between p-4 sm:p-8 lg:p-16 overflow-hidden bg-[#0B1B3A] text-white">
       {/* Background Subtle Gradient & Radial Glow */}
       <div className="absolute inset-0 bg-radial from-[#C9A24B]/15 via-transparent to-transparent opacity-60 pointer-events-none" />
 
-      {/* Floating Gold Dust Particles */}
-      {[...Array(12)].map((_, i) => (
-        <motion.div
-          key={i}
-          className="absolute w-1.5 h-1.5 rounded-full bg-[#C9A24B]"
-          style={{
-            top: `${(i * 19) % 85 + 5}%`,
-            left: `${(i * 23) % 90 + 5}%`,
-          }}
-          animate={{
-            y: [-15, 15, -15],
-            opacity: [0.2, 0.8, 0.2],
-            scale: [0.8, 1.3, 0.8],
-          }}
-          transition={{
-            duration: 3 + (i % 4),
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: (i * 0.3) % 2,
-          }}
-        />
-      ))}
+      {/* Floating Gold Dust Particles - hidden on mobile to conserve performance */}
+      <div className="hidden sm:block">
+        {[...Array(12)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-1.5 h-1.5 rounded-full bg-[#C9A24B]"
+            style={{
+              top: `${(i * 19) % 85 + 5}%`,
+              left: `${(i * 23) % 90 + 5}%`,
+            }}
+            animate={{
+              y: [-15, 15, -15],
+              opacity: [0.2, 0.8, 0.2],
+              scale: [0.8, 1.3, 0.8],
+            }}
+            transition={{
+              duration: 3 + (i % 4),
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: (i * 0.3) % 2,
+            }}
+          />
+        ))}
+      </div>
 
       {/* Top Eyebrow */}
       <div className="relative z-10 space-y-2">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-[#C9A24B]/40 text-[#C9A24B] text-xs font-bold uppercase tracking-widest backdrop-blur-md">
+        <div className="inline-flex items-center gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-white/10 border border-[#C9A24B]/40 text-[#C9A24B] text-[10px] sm:text-xs font-bold uppercase tracking-widest backdrop-blur-md">
           <ShieldCheck className="w-3.5 h-3.5" />
           <span>Encrypted School Gateway</span>
         </div>
       </div>
 
       {/* Centerpiece: Rising Sun over School Silhouette */}
-      <div className="relative z-10 my-auto py-8 flex flex-col items-center justify-center text-center">
-        <div className="relative w-64 h-48 sm:w-80 sm:h-60 mx-auto">
+      <div className="relative z-10 my-auto py-2 sm:py-8 flex flex-col items-center justify-center text-center">
+        <div className="relative w-40 h-24 sm:w-80 sm:h-60 mx-auto">
           {/* Animated Rising Sun / Aureole */}
           <motion.div
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-44 h-44 rounded-full bg-gradient-to-t from-[#C9A24B] via-[#E8D196] to-transparent blur-xl opacity-40"
@@ -118,16 +120,16 @@ export function LoginIllustration() {
           </svg>
         </div>
 
-        <h2 className="mt-4 font-serif text-2xl sm:text-3xl font-bold tracking-tight text-cream-100">
+        <h2 className="mt-2 sm:mt-4 font-serif text-lg sm:text-3xl font-bold tracking-tight text-white">
           Aurelia International School
         </h2>
-        <p className="mt-2 text-xs sm:text-sm text-[#C9A24B] font-medium tracking-wide">
+        <p className="mt-0.5 sm:mt-2 text-[11px] sm:text-sm text-[#C9A24B] font-medium tracking-wide">
           Veritas, Virtus, Excellentia
         </p>
       </div>
 
-      {/* Bottom Welcome Line */}
-      <div className="relative z-10 pt-4 border-t border-white/10 flex items-center justify-between text-xs text-cream-100/70">
+      {/* Bottom Welcome Line - hidden on small mobile to keep it slim */}
+      <div className="relative z-10 pt-2 sm:pt-4 border-t border-white/10 hidden sm:flex items-center justify-between text-xs text-white/70">
         <span className="flex items-center gap-1.5">
           <Sparkles className="w-3.5 h-3.5 text-[#C9A24B]" />
           <span>Academic Portal Session</span>

@@ -30,7 +30,7 @@ export default async function ParentOverviewPage() {
   return (
     <div className="space-y-8">
       {/* Child Profile Banner */}
-      <div className="bg-white rounded-3xl p-6 sm:p-8 border border-[#0B1B3A]/10 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+      <div className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 border border-[#0B1B3A]/10 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-6">
         <div className="flex items-center gap-4">
           <div className="w-14 h-14 rounded-2xl bg-[#0B1B3A] text-[#C9A24B] flex items-center justify-center font-serif text-xl font-bold border border-[#C9A24B]/30 shadow-xs">
             EV
@@ -55,7 +55,7 @@ export default async function ParentOverviewPage() {
 
         <Link
           href="/portal/parent/child"
-          className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#0B1B3A] text-white hover:bg-[#C9A24B] hover:text-[#0B1B3A] font-bold text-xs uppercase tracking-wider transition-colors shadow-xs self-start sm:self-auto cursor-pointer"
+          className="inline-flex items-center gap-2 px-5 py-3 min-h-[44px] rounded-xl bg-[#0B1B3A] text-white hover:bg-[#C9A24B] hover:text-[#0B1B3A] font-bold text-xs uppercase tracking-wider transition-colors shadow-xs self-start sm:self-auto cursor-pointer"
         >
           <span>Full Academic Dossier</span>
           <ArrowRight className="w-3.5 h-3.5" />
@@ -63,7 +63,7 @@ export default async function ParentOverviewPage() {
       </div>
 
       {/* 3 Metric Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
         {/* Attendance */}
         <Link
           href="/portal/parent/child"

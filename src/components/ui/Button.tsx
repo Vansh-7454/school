@@ -30,9 +30,9 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ref
   ) => {
     const sizeClasses = {
-      sm: "h-10 px-5 text-xs",
-      md: "h-12 px-7 text-sm",
-      lg: "h-14 px-9 text-base",
+      sm: "min-h-[44px] h-11 px-5 text-xs",
+      md: "min-h-[44px] h-12 px-7 text-sm",
+      lg: "min-h-[48px] h-14 px-9 text-base",
     };
 
     const variantClasses = {

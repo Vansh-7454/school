@@ -127,8 +127,8 @@ export function AdmissionCtaSection() {
 
       {/* Short Admissions Enquiry Form Card */}
       <ScrollReveal direction="up" delay={0.25} className="max-w-3xl mx-auto">
-        <div className="rounded-[24px] bg-gradient-to-b from-[#07122A]/95 to-[#0B1B3A]/95 border border-[#C9A24B]/35 p-8 sm:p-12 shadow-2xl backdrop-blur-xl">
-          <div className="text-center max-w-lg mx-auto mb-8 space-y-2">
+        <div className="rounded-[24px] bg-gradient-to-b from-[#07122A]/95 to-[#0B1B3A]/95 border border-[#C9A24B]/35 p-5 sm:p-10 md:p-12 shadow-2xl backdrop-blur-xl">
+          <div className="text-center max-w-lg mx-auto mb-6 sm:mb-8 space-y-2">
             <span className="text-xs font-semibold tracking-[0.25em] text-[#DFBE72] uppercase inline-flex items-center gap-1.5">
               <Sparkles strokeWidth={1.75} className="w-3.5 h-3.5" />
               Expression of Interest
@@ -157,8 +157,8 @@ export function AdmissionCtaSection() {
             </div>
           )}
 
-          <form onSubmit={handleSubmit} className="space-y-5">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
               {/* Parent Name */}
               <div className="space-y-1.5">
                 <label htmlFor="parentName" className="block text-xs font-semibold uppercase tracking-wider text-[#FBF6EA]/80">
@@ -170,7 +170,7 @@ export function AdmissionCtaSection() {
                   name="parentName"
                   required
                   placeholder="e.g. Eleanor Vance"
-                  className="w-full h-12 px-4 rounded-[14px] bg-[#07122A]/80 border border-[#FBF6EA]/20 text-[#FBF6EA] placeholder:text-[#FBF6EA]/35 text-sm focus:outline-none focus:border-[#C9A24B] focus:ring-1 focus:ring-[#C9A24B] transition-colors"
+                  className="w-full h-12 px-4 rounded-[14px] bg-[#07122A]/80 border border-[#FBF6EA]/20 text-[#FBF6EA] placeholder:text-[#FBF6EA]/35 text-base sm:text-sm focus:outline-none focus:border-[#C9A24B] focus:ring-1 focus:ring-[#C9A24B] transition-colors"
                 />
                 {formState.errors?.parentName && (
                   <p className="text-xs text-rose-400 mt-1">{formState.errors.parentName[0]}</p>
@@ -188,7 +188,7 @@ export function AdmissionCtaSection() {
                   name="phone"
                   required
                   placeholder="e.g. +44 20 7946 0891"
-                  className="w-full h-12 px-4 rounded-[14px] bg-[#07122A]/80 border border-[#FBF6EA]/20 text-[#FBF6EA] placeholder:text-[#FBF6EA]/35 text-sm focus:outline-none focus:border-[#C9A24B] focus:ring-1 focus:ring-[#C9A24B] transition-colors"
+                  className="w-full h-12 px-4 rounded-[14px] bg-[#07122A]/80 border border-[#FBF6EA]/20 text-[#FBF6EA] placeholder:text-[#FBF6EA]/35 text-base sm:text-sm focus:outline-none focus:border-[#C9A24B] focus:ring-1 focus:ring-[#C9A24B] transition-colors"
                 />
                 {formState.errors?.phone && (
                   <p className="text-xs text-rose-400 mt-1">{formState.errors.phone[0]}</p>
@@ -206,7 +206,7 @@ export function AdmissionCtaSection() {
                 name="grade"
                 required
                 defaultValue=""
-                className="w-full h-12 px-4 rounded-[14px] bg-[#07122A]/80 border border-[#FBF6EA]/20 text-[#FBF6EA] text-sm focus:outline-none focus:border-[#C9A24B] focus:ring-1 focus:ring-[#C9A24B] transition-colors"
+                className="w-full h-12 px-4 rounded-[14px] bg-[#07122A]/80 border border-[#FBF6EA]/20 text-[#FBF6EA] text-base sm:text-sm focus:outline-none focus:border-[#C9A24B] focus:ring-1 focus:ring-[#C9A24B] transition-colors"
               >
                 <option value="" disabled className="bg-[#07122A] text-[#FBF6EA]/50">
                   Select Stage / Grade of Interest

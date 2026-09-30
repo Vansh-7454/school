@@ -91,7 +91,7 @@ export function AdmissionsFaqSection() {
                   <button
                     type="button"
                     onClick={() => toggleAccordion(index)}
-                    className="w-full py-5 px-6 sm:px-7 text-left flex items-center justify-between gap-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A24B] cursor-pointer"
+                    className="w-full py-4 sm:py-5 px-4 sm:px-7 text-left flex items-center justify-between gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A24B] cursor-pointer min-h-[44px]"
                     aria-expanded={isOpen}
                   >
                     <span className="font-serif text-base sm:text-lg font-bold text-[#0B1B3A]">
@@ -119,7 +119,7 @@ export function AdmissionsFaqSection() {
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.3, ease: "easeInOut" }}
                       >
-                        <div className="px-6 sm:px-7 pb-6 pt-1 text-xs sm:text-sm text-[#0B1B3A]/70 leading-relaxed font-sans border-t border-[#0B1B3A]/5">
+                        <div className="px-4 sm:px-7 pb-5 sm:pb-6 pt-1 text-xs sm:text-sm text-[#0B1B3A]/70 leading-relaxed font-sans border-t border-[#0B1B3A]/5">
                           {faq.answer}
                         </div>
                       </motion.div>

@@ -50,7 +50,7 @@ export default async function StudentResultsPage() {
       <ResultsBarChart results={data.results} />
 
       {/* Detailed Results Table with Teacher Remarks */}
-      <div className="bg-white rounded-3xl p-6 sm:p-8 border border-[#0B1B3A]/10 shadow-xs space-y-4">
+      <div className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-8 border border-[#0B1B3A]/10 shadow-xs space-y-4">
         <h3 className="font-serif font-bold text-xl text-[#0B1B3A] pb-3 border-b border-[#0B1B3A]/10">
           Faculty Remarks & Detailed Transcripts
         </h3>

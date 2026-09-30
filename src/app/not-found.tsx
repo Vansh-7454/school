@@ -17,7 +17,7 @@ export default function NotFound() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#0B1B3A] text-white pt-32 pb-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden flex flex-col justify-center items-center">
+    <div className="min-h-[100svh] bg-[#0B1B3A] text-white pt-28 sm:pt-32 pb-16 sm:pb-24 px-5 sm:px-6 lg:px-8 relative overflow-hidden flex flex-col justify-center items-center">
       {/* Ambient background glow */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-[#C9A24B]/10 rounded-full blur-[140px] pointer-events-none" />
 

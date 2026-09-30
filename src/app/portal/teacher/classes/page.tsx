@@ -37,7 +37,7 @@ export default async function TeacherClassesPage() {
         }) => (
           <div
             key={cls._id}
-            className="bg-white rounded-3xl p-6 sm:p-8 border border-[#0B1B3A]/10 shadow-xs hover:border-[#C9A24B] transition-all space-y-5 flex flex-col justify-between"
+            className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 border border-[#0B1B3A]/10 shadow-xs hover:border-[#C9A24B] transition-all space-y-5 flex flex-col justify-between"
           >
             <div className="space-y-3">
               <div className="flex items-center justify-between">

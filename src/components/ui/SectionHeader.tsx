@@ -63,7 +63,7 @@ export function SectionHeader({
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: MOTION.base, delay: 0.1, ease: MOTION.ease }}
         className={cn(
-          "font-serif font-normal tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] leading-[1.12]",
+          "font-serif font-normal tracking-tight text-[clamp(1.75rem,5vw,3rem)] leading-[1.15]",
           effectiveVariant === "dark"
             ? "text-[#FAF6ED]"
             : effectiveVariant === "light"

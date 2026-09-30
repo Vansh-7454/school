@@ -79,15 +79,15 @@ export function AboutTimelineSection() {
         {/* Central Vertical Timeline */}
         <div className="relative">
           {/* Static Background Guide Line */}
-          <div className="absolute left-6 md:left-1/2 top-4 bottom-4 w-0.5 -translate-x-1/2 bg-[#C9A24B]/20" />
+          <div className="absolute left-4 sm:left-6 md:left-1/2 top-4 bottom-4 w-0.5 -translate-x-1/2 bg-[#C9A24B]/20" />
 
           {/* Animated Gold Fill Line that Draws on Scroll */}
           <motion.div
             style={{ scaleY }}
-            className="absolute left-6 md:left-1/2 top-4 bottom-4 w-0.5 -translate-x-1/2 gold-gradient-bg origin-top z-10"
+            className="absolute left-4 sm:left-6 md:left-1/2 top-4 bottom-4 w-0.5 -translate-x-1/2 gold-gradient-bg origin-top z-10"
           />
 
-          <div className="space-y-12 sm:space-y-16">
+          <div className="space-y-8 sm:space-y-16">
             {MILESTONES.map((item, idx) => {
               const isEven = idx % 2 === 0;
 
@@ -99,17 +99,17 @@ export function AboutTimelineSection() {
                   }`}
                 >
                   {/* Central Year Milestone Marker on the line */}
-                  <div className="absolute left-6 md:left-1/2 -translate-x-1/2 z-20 w-12 h-12 rounded-full bg-[#07122A] border-2 border-[#C9A24B] text-[#DFBE72] font-serif text-xs font-semibold flex items-center justify-center shadow-gold">
+                  <div className="absolute left-4 sm:left-6 md:left-1/2 -translate-x-1/2 z-20 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-[#07122A] border-2 border-[#C9A24B] text-[#DFBE72] font-serif text-[10px] sm:text-xs font-semibold flex items-center justify-center shadow-gold">
                     {item.year.slice(2)}
                   </div>
 
                   {/* Content Card (Flanking left or right on desktop, right on mobile) */}
-                  <div className="pl-16 md:pl-0 w-full md:w-1/2 md:px-8">
+                  <div className="pl-11 sm:pl-16 md:pl-0 w-full md:w-1/2 md:px-8">
                     <ScrollReveal
                       direction={isEven ? "left" : "right"}
                       delay={0.1}
                     >
-                      <Card variant="light" className="p-6 sm:p-8">
+                      <Card variant="light" className="p-4 sm:p-8">
                         <div className="flex items-center justify-between gap-2 mb-2">
                           <span className="font-serif text-2xl font-bold gold-gradient-text">
                             {item.year}

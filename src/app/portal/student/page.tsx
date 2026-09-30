@@ -50,9 +50,9 @@ export default async function StudentOverviewPage() {
   return (
     <div className="space-y-8">
       {/* 4 Overview Metric Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
         {/* Attendance Rate */}
-        <div className="bg-white rounded-3xl p-6 border border-[#0B1B3A]/10 shadow-xs hover:border-[#C9A24B] transition-all group">
+        <div className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-6 border border-[#0B1B3A]/10 shadow-xs hover:border-[#C9A24B] transition-all group">
           <div className="flex items-center justify-between mb-4">
             <span className="text-xs font-bold uppercase tracking-wider text-[#0B1B3A]/60">
               Term Attendance
@@ -73,7 +73,7 @@ export default async function StudentOverviewPage() {
         {/* Pending Tasks */}
         <Link
           href="/portal/student/assignments"
-          className="bg-white rounded-3xl p-6 border border-[#0B1B3A]/10 shadow-xs hover:border-[#C9A24B] transition-all group block"
+          className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-6 border border-[#0B1B3A]/10 shadow-xs hover:border-[#C9A24B] transition-all group block"
         >
           <div className="flex items-center justify-between mb-4">
             <span className="text-xs font-bold uppercase tracking-wider text-[#0B1B3A]/60">
@@ -95,7 +95,7 @@ export default async function StudentOverviewPage() {
         {/* Next Session */}
         <Link
           href="/portal/student/timetable"
-          className="bg-white rounded-3xl p-6 border border-[#0B1B3A]/10 shadow-xs hover:border-[#C9A24B] transition-all group block"
+          className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-6 border border-[#0B1B3A]/10 shadow-xs hover:border-[#C9A24B] transition-all group block"
         >
           <div className="flex items-center justify-between mb-4">
             <span className="text-xs font-bold uppercase tracking-wider text-[#0B1B3A]/60">
@@ -118,7 +118,7 @@ export default async function StudentOverviewPage() {
         {/* Top Result */}
         <Link
           href="/portal/student/results"
-          className="bg-white rounded-3xl p-6 border border-[#0B1B3A]/10 shadow-xs hover:border-[#C9A24B] transition-all group block"
+          className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-6 border border-[#0B1B3A]/10 shadow-xs hover:border-[#C9A24B] transition-all group block"
         >
           <div className="flex items-center justify-between mb-4">
             <span className="text-xs font-bold uppercase tracking-wider text-[#0B1B3A]/60">
@@ -143,9 +143,9 @@ export default async function StudentOverviewPage() {
       </div>
 
       {/* Two-Column Midsection: Quick Timetable & Academic Profile */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
         {/* Left 2 Cols: Today's Schedule */}
-        <div className="lg:col-span-2 bg-white rounded-3xl p-6 sm:p-8 border border-[#0B1B3A]/10 shadow-xs space-y-6">
+        <div className="lg:col-span-2 bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 border border-[#0B1B3A]/10 shadow-xs space-y-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2.5">
               <Calendar className="w-5 h-5 text-[#C9A24B]" />
@@ -155,7 +155,7 @@ export default async function StudentOverviewPage() {
             </div>
             <Link
               href="/portal/student/timetable"
-              className="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-[#C9A24B] hover:text-[#0B1B3A] transition-colors"
+              className="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-[#C9A24B] hover:text-[#0B1B3A] transition-colors min-h-[44px] py-2"
             >
               <span>Full Week</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -190,7 +190,7 @@ export default async function StudentOverviewPage() {
         </div>
 
         {/* Right Col: Student Cohort Profile */}
-        <div className="bg-white rounded-3xl p-6 sm:p-8 border border-[#0B1B3A]/10 shadow-xs space-y-6">
+        <div className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 border border-[#0B1B3A]/10 shadow-xs space-y-6">
           <div className="flex items-center gap-2.5">
             <GraduationCap className="w-5 h-5 text-[#C9A24B]" />
             <h2 className="font-serif font-bold text-xl text-[#0B1B3A]">

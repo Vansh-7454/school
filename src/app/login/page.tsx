@@ -18,12 +18,12 @@ export const metadata: Metadata = {
 
 export default function LoginPage() {
   return (
-    <div className="min-h-screen bg-[#FBF6EA] flex flex-col justify-center py-10 px-5 sm:px-8 lg:px-12">
+    <div className="min-h-[100svh] bg-[#FBF6EA] flex flex-col justify-center py-6 sm:py-10 px-4 sm:px-8 lg:px-12">
       {/* Top Floating Back Link */}
-      <div className="max-w-6xl mx-auto w-full mb-6">
+      <div className="max-w-6xl mx-auto w-full mb-4 sm:mb-6">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#0B1B3A]/70 hover:text-[#C9A24B] transition-colors"
+          className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#0B1B3A]/70 hover:text-[#C9A24B] transition-colors min-h-[44px] py-2"
         >
           <ArrowLeft className="w-3.5 h-3.5" />
           <span>Return to Public Website</span>
@@ -31,14 +31,14 @@ export default function LoginPage() {
       </div>
 
       {/* Main Split Authentication Card */}
-      <div className="max-w-6xl mx-auto w-full bg-white rounded-3xl sm:rounded-[2rem] border border-[#0B1B3A]/10 shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-12 min-h-[640px]">
-        {/* Left Side: Animated Navy Illustration (Collapsed to banner on mobile) */}
-        <div className="lg:col-span-5 relative min-h-[220px] lg:min-h-full">
+      <div className="max-w-6xl mx-auto w-full bg-white rounded-2xl sm:rounded-[2rem] border border-[#0B1B3A]/10 shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-12 min-h-0 lg:min-h-[640px]">
+        {/* Left Side: Animated Navy Illustration (Collapsed to slim header on mobile) */}
+        <div className="lg:col-span-5 relative min-h-[140px] sm:min-h-[200px] lg:min-h-full">
           <LoginIllustration />
         </div>
 
         {/* Right Side: Clean Cream Sign In Form */}
-        <div className="lg:col-span-7 p-6 sm:p-10 lg:p-14 flex flex-col justify-center bg-[#FAF8F5]/50">
+        <div className="lg:col-span-7 p-5 sm:p-10 lg:p-14 flex flex-col justify-center bg-[#FAF8F5]/50">
           <div className="w-full max-w-md mx-auto space-y-8">
             {/* Header: Logo and Title */}
             <div className="space-y-3">

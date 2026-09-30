@@ -78,7 +78,7 @@ export function PortalSidebar({ role, onNavigate }: PortalSidebarProps) {
                 key={item.href}
                 href={item.href}
                 onClick={onNavigate}
-                className={`flex items-center justify-between px-3.5 py-3 rounded-xl text-xs font-semibold tracking-wide transition-all ${
+                className={`flex items-center justify-between px-3.5 py-3 min-h-[44px] rounded-xl text-xs font-semibold tracking-wide transition-all ${
                   isActive
                     ? "bg-[#C9A24B] text-[#0B1B3A] font-bold shadow-md"
                     : "text-cream-100/80 hover:bg-white/10 hover:text-white"
@@ -99,7 +99,7 @@ export function PortalSidebar({ role, onNavigate }: PortalSidebarProps) {
       <div className="pt-6 border-t border-white/10 space-y-2">
         <Link
           href="/"
-          className="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs text-cream-100/60 hover:text-white hover:bg-white/5 transition-colors"
+          className="flex items-center justify-between px-3.5 py-2.5 min-h-[44px] rounded-xl text-xs text-cream-100/60 hover:text-white hover:bg-white/5 transition-colors"
         >
           <span>Aurelia Public Site</span>
           <ExternalLink className="w-3.5 h-3.5" />

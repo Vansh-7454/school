@@ -127,7 +127,7 @@ export default async function ArticleDetailPage({ params }: ArticleDetailPagePro
         </div>
 
         {/* Article Container */}
-        <article className="bg-white rounded-3xl p-8 sm:p-14 border border-[#0B1B3A]/10 shadow-xl space-y-10">
+        <article className="bg-white rounded-3xl p-5 sm:p-10 md:p-14 border border-[#0B1B3A]/10 shadow-xl space-y-6 sm:space-y-10">
           {/* Header */}
           <div className="space-y-5">
             <div className="flex flex-wrap items-center gap-3">

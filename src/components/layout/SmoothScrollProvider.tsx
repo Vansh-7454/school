@@ -24,13 +24,14 @@ export function SmoothScrollProvider({ children }: SmoothScrollProviderProps) {
   const [lenisInstance, setLenisInstance] = useState<Lenis | null>(null);
 
   useEffect(() => {
-    // Check user preference for reduced motion
+    // Check user preference for reduced motion or mobile viewport
     const prefersReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     ).matches;
+    const isMobile = window.innerWidth < 768 || window.matchMedia("(max-width: 767px)").matches;
 
-    if (prefersReducedMotion) {
-      // Respect accessibility preference by skipping smooth scroll
+    if (prefersReducedMotion || isMobile) {
+      // Respect accessibility preference and preserve native mobile momentum scroll & address bar behavior
       return;
     }
 

@@ -92,17 +92,15 @@ export function StatsBand() {
 
       <Container className="relative z-10">
         <ScrollReveal direction="up" delay={0.1}>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-0">
             {STATS.map((stat, idx) => {
               const displayVal = counts[idx].toLocaleString() + (stat.suffix || "");
 
               return (
                 <div
                   key={idx}
-                  className={`flex flex-col items-center text-center px-4 lg:px-6 ${
-                    idx < STATS.length - 1
-                      ? "lg:border-r lg:border-[#C9A24B]/25 sm:border-b lg:border-b-0 pb-8 sm:pb-8 lg:pb-0"
-                      : ""
+                  className={`flex flex-col items-center text-center px-2 sm:px-4 lg:px-6 ${
+                    idx < STATS.length - 1 ? "lg:border-r lg:border-[#C9A24B]/25" : ""
                   }`}
                 >
                   {/* Big Number */}

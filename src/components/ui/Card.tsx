@@ -45,7 +45,7 @@ export function Card({
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       className={cn(
-        "relative rounded-[24px] p-6 md:p-8 transition-all duration-300 flex flex-col h-full overflow-hidden",
+        "relative rounded-[24px] p-5 sm:p-7 md:p-8 transition-all duration-300 flex flex-col h-full overflow-hidden",
         isLight
           ? "bg-white text-[#0B1B3A] border border-[#C9A24B]/20 shadow-[0_4px_20px_-4px_rgba(11,27,58,0.06),0_12px_32px_-8px_rgba(11,27,58,0.08)]"
           : "bg-[#122347]/90 text-[#FAF6ED] border border-[#FAF6ED]/10 shadow-[0_10px_35px_-10px_rgba(6,15,34,0.4)]",
@@ -55,11 +55,11 @@ export function Card({
       )}
       {...props}
     >
-      {/* Interactive Cursor Tracking Radial Glow */}
+      {/* Interactive Cursor Tracking Radial Glow - only on fine pointer devices */}
       {interactive && mousePos && (
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -inset-px rounded-[24px] opacity-100 transition-opacity duration-300"
+          className="pointer-events-none absolute -inset-px rounded-[24px] opacity-100 transition-opacity duration-300 hidden md:block"
           style={{
             background: `radial-gradient(400px circle at ${mousePos.x}px ${mousePos.y}px, rgba(201, 162, 75, ${
               isLight ? 0.08 : 0.14

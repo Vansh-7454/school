@@ -100,7 +100,7 @@ export function ContactCardsSection() {
 
             return (
               <ScrollReveal key={card.id} delay={idx * 0.08}>
-                <Card variant="light" className="p-8 flex flex-col justify-between h-full group">
+                <Card variant="light" className="p-5 sm:p-8 flex flex-col justify-between h-full group">
                   <div>
                     <div className="flex items-center justify-between mb-6">
                       <IconBox icon={Icon} tone="gold" size="md" />

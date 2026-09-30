@@ -90,7 +90,7 @@ export function AcademicFacilitiesSection() {
               delay={0.1 + idx * 0.08}
               className={item.spanClass}
             >
-              <Card variant="light" className="h-full p-8 justify-between group">
+              <Card variant="light" className="h-full p-5 sm:p-7 md:p-8 justify-between group">
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
                     <div className="w-12 h-12 rounded-2xl bg-[#0B1B3A] text-[#DFBE72] flex items-center justify-center group-hover:scale-105 transition-transform shadow-sm border border-[#C9A24B]/30">

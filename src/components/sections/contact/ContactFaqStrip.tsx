@@ -66,10 +66,10 @@ export function ContactFaqStrip() {
                   <button
                     type="button"
                     onClick={() => toggle(index)}
-                    className="w-full py-4.5 px-6 text-left flex items-center justify-between gap-4 focus:outline-none cursor-pointer"
+                    className="w-full min-h-[48px] py-4 px-4 sm:px-6 text-left flex items-center justify-between gap-4 focus:outline-none cursor-pointer"
                     aria-expanded={isOpen}
                   >
-                    <span className="font-serif text-base font-bold text-[#0B1B3A]">
+                    <span className="font-serif text-sm sm:text-base font-bold text-[#0B1B3A]">
                       {item.q}
                     </span>
                     <motion.div
@@ -92,7 +92,7 @@ export function ContactFaqStrip() {
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.25, ease: "easeInOut" }}
                       >
-                        <div className="px-6 pb-5 pt-1 text-xs sm:text-sm text-[#0B1B3A]/70 font-sans border-t border-[#0B1B3A]/5">
+                        <div className="px-4 sm:px-6 pb-5 pt-1 text-xs sm:text-sm text-[#0B1B3A]/70 font-sans border-t border-[#0B1B3A]/5">
                           {item.a}
                         </div>
                       </motion.div>
@@ -106,7 +106,7 @@ export function ContactFaqStrip() {
 
         {/* Admissions Prompt Card */}
         <ScrollReveal delay={0.2}>
-          <Card variant="light" className="p-8 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6 border-2 border-[#C9A24B]/30 shadow-md">
+          <Card variant="light" className="p-5 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6 border-2 border-[#C9A24B]/30 shadow-md">
             <div className="space-y-2 text-center md:text-left">
               <div className="inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-[#916C28]">
                 <GraduationCap className="w-4 h-4 stroke-[1.75]" />
@@ -120,8 +120,8 @@ export function ContactFaqStrip() {
               </p>
             </div>
 
-            <div className="flex-shrink-0">
-              <Button href="/admissions" variant="primary">
+            <div className="flex-shrink-0 w-full sm:w-auto">
+              <Button href="/admissions" variant="primary" className="w-full sm:w-auto">
                 Proceed to Admissions
               </Button>
             </div>

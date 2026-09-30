@@ -62,17 +62,17 @@ export function AboutSnippet() {
 
           {/* Right Column: Layered Illustrated Composition with Floating Badge */}
           <div className="lg:col-span-6 relative flex items-center justify-center">
-            <ScrollReveal direction="up" delay={0.25} className="w-full max-w-lg">
-              <div className="relative aspect-square w-full flex items-center justify-center p-6">
+            <ScrollReveal direction="up" delay={0.25} className="w-full max-w-[340px] sm:max-w-lg mx-auto">
+              <div className="relative aspect-square w-full flex items-center justify-center p-4 sm:p-6">
                 {/* Outer Rotating Geometric Gold Frame */}
                 <motion.div
                   animate={shouldReduceMotion ? {} : { rotate: 360 }}
                   transition={{ duration: 70, repeat: Infinity, ease: "linear" }}
-                  className="absolute inset-4 rounded-3xl border border-gold-400/30 border-dashed pointer-events-none"
+                  className="absolute inset-2 sm:inset-4 rounded-3xl border border-gold-400/30 border-dashed pointer-events-none"
                 />
 
                 {/* Inner Static Geometric Shield */}
-                <div className="absolute inset-10 rounded-2xl bg-gradient-to-br from-navy-900 via-navy-950 to-navy-900 shadow-2xl border border-gold-400/40 p-8 flex items-center justify-center overflow-hidden">
+                <div className="absolute inset-6 sm:inset-10 rounded-2xl bg-gradient-to-br from-navy-900 via-navy-950 to-navy-900 shadow-2xl border border-gold-400/40 p-4 sm:p-8 flex items-center justify-center overflow-hidden">
                   {/* Background Radial Light Accent */}
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(201,162,75,0.22)_0%,transparent_70%)]" />
 
@@ -219,20 +219,20 @@ export function AboutSnippet() {
                   </svg>
                 </div>
 
-                {/* Floating "25+ Years" Badge with Subtle Float Animation */}
+                {/* Floating "25+ Years" Badge with Safe Padding on Mobile */}
                 <motion.div
-                  animate={shouldReduceMotion ? {} : { y: [-6, 6, -6] }}
+                  animate={shouldReduceMotion ? {} : { y: [-4, 4, -4] }}
                   transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute -bottom-2 -right-2 sm:bottom-4 sm:right-4 z-20 rounded-2xl bg-gradient-to-r from-navy-950 via-navy-900 to-navy-950 p-4 border border-gold-400/50 shadow-2xl backdrop-blur-md flex items-center gap-3.5"
+                  className="absolute bottom-1 right-1 sm:bottom-4 sm:right-4 z-20 rounded-2xl bg-gradient-to-r from-navy-950 via-navy-900 to-navy-950 p-2.5 sm:p-4 border border-gold-400/50 shadow-2xl backdrop-blur-md flex items-center gap-2.5 sm:gap-3.5 max-w-[90%]"
                 >
-                  <div className="w-11 h-11 rounded-xl gold-gradient-bg flex items-center justify-center text-navy-950 shrink-0 shadow-gold">
-                    <Award className="w-6 h-6" />
+                  <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl gold-gradient-bg flex items-center justify-center text-navy-950 shrink-0 shadow-gold">
+                    <Award className="w-5 h-5 sm:w-6 sm:h-6" />
                   </div>
                   <div>
-                    <span className="font-serif text-2xl font-bold gold-gradient-text block leading-none">
+                    <span className="font-serif text-lg sm:text-2xl font-bold gold-gradient-text block leading-none">
                       25+ Years
                     </span>
-                    <span className="font-sans text-[11px] font-semibold uppercase tracking-wider text-cream-100/80">
+                    <span className="font-sans text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider text-cream-100/80">
                       Academic Distinction
                     </span>
                   </div>

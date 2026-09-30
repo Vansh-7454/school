@@ -19,19 +19,21 @@ export function Hero() {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [navHeight, setNavHeight] = useState<number | null>(null);
+  const [isDesktop, setIsDesktop] = useState(false);
 
-  // Measure actual navbar height dynamically to guarantee zero gaps
+  // Measure actual navbar height and viewport size dynamically to guarantee zero gaps
   useEffect(() => {
-    const measureNav = () => {
+    const updateDimensions = () => {
       const header = document.querySelector("header");
       if (header) {
         setNavHeight(header.offsetHeight);
       }
+      setIsDesktop(window.innerWidth >= 1024);
     };
 
-    measureNav();
-    window.addEventListener("resize", measureNav);
-    return () => window.removeEventListener("resize", measureNav);
+    updateDimensions();
+    window.addEventListener("resize", updateDimensions);
+    return () => window.removeEventListener("resize", updateDimensions);
   }, []);
 
   // Autoplay setup with strict browser policy and reduced motion handling
@@ -107,14 +109,18 @@ export function Hero() {
       aria-label="Aurelia International School - Campus Overview"
       className={cn(
         "relative w-full overflow-hidden select-none bg-[#060F22]",
-        // CSS fallback classes before JS measurement hydrates
+        // CSS fallback margin before JS measurement hydrates
         "mt-[60px] sm:mt-16",
-        "h-[calc(100vh-60px)] sm:h-[calc(100vh-4rem)]"
+        // Mobile & Tablet (< 1024px): Natural 16:9 aspect ratio so video and embedded typography scale proportionally with zero cropping
+        "w-full aspect-video h-auto",
+        // Desktop (>= 1024px): Existing full-bleed cinematic viewport presentation
+        "lg:aspect-auto lg:h-[calc(100vh-var(--nav-height,4rem))]"
       )}
       style={{
         marginTop: navHeight !== null ? `${navHeight}px` : undefined,
-        height: navHeight !== null ? `calc(100vh - ${navHeight}px)` : undefined,
-      }}
+        height: isDesktop && navHeight !== null ? `calc(100vh - ${navHeight}px)` : undefined,
+        "--nav-height": navHeight !== null ? `${navHeight}px` : "64px",
+      } as React.CSSProperties}
     >
       {/* 
         Accessible Screen Reader Heading:
@@ -127,8 +133,8 @@ export function Hero() {
 
       {/* =========================================================================
           FULL-BLEED CINEMATIC MEDIA CONTAINER
-          The video & fallback poster cover 100% of the hero area with object-fit: cover.
-          No bottom blur, no white fade, no gradient overlay, no border, no letterboxing.
+          Preserves the video's natural 16:9 aspect ratio and embedded typography.
+          No bottom blur, no white fade, no gradient overlay, no border, no distortion.
          ========================================================================= */}
       {/* Instant Poster Fallback (Zero black/blank flash on initial render) */}
       <Image
@@ -139,8 +145,7 @@ export function Hero() {
         sizes="100vw"
         quality={92}
         className={cn(
-          "absolute inset-0 w-full h-full block object-cover pointer-events-none",
-          "object-[24%_center] sm:object-center",
+          "absolute inset-0 w-full h-full block object-cover object-center pointer-events-none",
           "transition-opacity duration-700 ease-out",
           isVideoLoaded && isPlaying ? "opacity-0" : "opacity-100"
         )}
@@ -162,8 +167,7 @@ export function Hero() {
           setIsVideoLoaded(true);
         }}
         className={cn(
-          "absolute inset-0 w-full h-full block object-cover pointer-events-none",
-          "object-[24%_center] sm:object-center",
+          "absolute inset-0 w-full h-full block object-cover object-center pointer-events-none",
           "transition-opacity duration-700 ease-out",
           isVideoLoaded && isPlaying ? "opacity-100" : "opacity-0"
         )}

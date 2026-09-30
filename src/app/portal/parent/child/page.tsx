@@ -46,12 +46,12 @@ export default async function ParentChildPage() {
       </div>
 
       {/* Attendance Calendar View for September 2026 */}
-      <div className="bg-white rounded-3xl p-6 sm:p-8 border border-[#0B1B3A]/10 shadow-xs space-y-6">
+      <div className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-8 border border-[#0B1B3A]/10 shadow-xs space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-[#0B1B3A]/10">
           <div className="flex items-center gap-2.5">
             <CalendarCheck className="w-5 h-5 text-[#C9A24B]" />
             <div>
-              <h3 className="font-serif font-bold text-xl text-[#0B1B3A]">
+              <h3 className="font-serif font-bold text-lg sm:text-xl text-[#0B1B3A]">
                 Attendance Calendar: September 2026
               </h3>
               <p className="text-xs text-[#0B1B3A]/50">
@@ -77,11 +77,11 @@ export default async function ParentChildPage() {
         </div>
 
         {/* Calendar Grid */}
-        <div className="grid grid-cols-7 gap-2 sm:gap-3 text-center">
+        <div className="grid grid-cols-7 gap-1 sm:gap-3 text-center">
           {["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"].map((day) => (
             <div
               key={day}
-              className="py-2 text-[11px] font-bold uppercase tracking-wider text-[#0B1B3A]/50 font-mono"
+              className="py-1.5 sm:py-2 text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-[#0B1B3A]/50 font-mono"
             >
               {day}
             </div>
@@ -89,7 +89,7 @@ export default async function ParentChildPage() {
 
           {/* Empty cells before start of month */}
           {Array.from({ length: (startDayOfWeek + 6) % 7 }).map((_, i) => (
-            <div key={`empty-${i}`} className="p-2 sm:p-3 rounded-2xl bg-transparent" />
+            <div key={`empty-${i}`} className="p-1 sm:p-3 rounded-xl sm:rounded-2xl bg-transparent" />
           ))}
 
           {/* Days 1 to 30 */}
@@ -106,21 +106,21 @@ export default async function ParentChildPage() {
               cellBg = "bg-gray-50/50 border-transparent text-[#0B1B3A]/30";
             } else if (record?.status === "Present") {
               cellBg = "bg-emerald-50/80 border-emerald-200 text-emerald-900";
-              statusDot = <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 mx-auto mt-1" />;
+              statusDot = <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 mx-auto mt-0.5" />;
             } else if (record?.status === "Excused") {
               cellBg = "bg-blue-50/80 border-blue-200 text-blue-900";
-              statusDot = <span className="w-1.5 h-1.5 rounded-full bg-blue-600 mx-auto mt-1" />;
+              statusDot = <span className="w-1.5 h-1.5 rounded-full bg-blue-600 mx-auto mt-0.5" />;
             } else if (record?.status === "Late") {
               cellBg = "bg-amber-50/80 border-amber-200 text-amber-900";
-              statusDot = <span className="w-1.5 h-1.5 rounded-full bg-amber-600 mx-auto mt-1" />;
+              statusDot = <span className="w-1.5 h-1.5 rounded-full bg-amber-600 mx-auto mt-0.5" />;
             }
 
             return (
               <div
                 key={dayNum}
-                className={`p-2 sm:p-3 rounded-2xl border text-xs sm:text-sm font-semibold transition-all flex flex-col items-center justify-between min-h-[50px] sm:min-h-[64px] ${cellBg}`}
+                className={`p-1 sm:p-3 rounded-xl sm:rounded-2xl border text-[11px] sm:text-sm font-semibold transition-all flex flex-col items-center justify-between min-h-[42px] sm:min-h-[64px] ${cellBg}`}
               >
-                <span className="font-mono text-xs">{dayNum}</span>
+                <span className="font-mono text-[10px] sm:text-xs">{dayNum}</span>
                 {statusDot}
                 {!isWeekend && record?.status && (
                   <span className="text-[9px] uppercase font-bold tracking-tight opacity-75 hidden sm:block">
@@ -134,7 +134,7 @@ export default async function ParentChildPage() {
       </div>
 
       {/* Academic Marks & Formative Transcripts */}
-      <div className="bg-white rounded-3xl p-6 sm:p-8 border border-[#0B1B3A]/10 shadow-xs space-y-4">
+      <div className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-8 border border-[#0B1B3A]/10 shadow-xs space-y-4">
         <div className="flex items-center justify-between pb-3 border-b border-[#0B1B3A]/10">
           <div className="flex items-center gap-2">
             <Award className="w-5 h-5 text-[#C9A24B]" />

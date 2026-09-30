@@ -82,8 +82,8 @@ export function EligibilityTable() {
         {/* Desktop / Tablet Table View (hidden on mobile) */}
         <div className="hidden md:block">
           <ScrollReveal>
-            <div className="bg-[#FAF8F5] rounded-3xl border border-[#0B1B3A]/10 overflow-hidden shadow-sm">
-              <table className="w-full text-left border-collapse">
+            <div className="bg-[#FAF8F5] rounded-3xl border border-[#0B1B3A]/10 overflow-x-auto shadow-sm">
+              <table className="w-full text-left border-collapse min-w-[640px]">
                 <thead>
                   <tr className="bg-[#0B1B3A] text-white text-xs font-semibold uppercase tracking-wider">
                     <th className="py-5 px-6 font-serif">Academic Level</th>
@@ -134,7 +134,7 @@ export function EligibilityTable() {
         <div className="md:hidden space-y-4">
           {CRITERIA.map((row, idx) => (
             <ScrollReveal key={row.level} delay={idx * 0.05}>
-              <div className="bg-[#FAF8F5] rounded-2xl p-6 border border-[#0B1B3A]/10 shadow-sm space-y-3">
+              <div className="bg-[#FAF8F5] rounded-2xl p-4 sm:p-6 border border-[#0B1B3A]/10 shadow-sm space-y-3">
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-semibold uppercase tracking-wider text-[#C9A24B]">
                     {row.stage}

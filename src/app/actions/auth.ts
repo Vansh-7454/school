@@ -6,6 +6,7 @@ import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { z } from "zod";
 import { AuthError } from "next-auth";
+import { getDemoUser } from "@/lib/demoUsers";
 
 const LoginSchema = z.object({
   email: z.string().email("Please enter a valid email address").trim(),
@@ -54,11 +55,16 @@ export async function loginAction(
   const ip = forwardedFor ? forwardedFor.split(",")[0].trim() : "127.0.0.1";
   const rateLimitKey = `${email.toLowerCase()}:${ip}`;
 
-  const limitCheck = checkRateLimit(rateLimitKey);
-  if (limitCheck.isLocked) {
-    return {
-      error: `Too many failed attempts. Account temporarily locked for security. Please try again in ${limitCheck.remainingMinutes} minute(s).`,
-    };
+  const isDemo = !!getDemoUser(email, password);
+  if (isDemo) {
+    clearRateLimit(rateLimitKey);
+  } else {
+    const limitCheck = checkRateLimit(rateLimitKey);
+    if (limitCheck.isLocked) {
+      return {
+        error: `Too many failed attempts. Account temporarily locked for security. Please try again in ${limitCheck.remainingMinutes} minute(s).`,
+      };
+    }
   }
 
   // 3. Attempt Credentials Sign-In
@@ -86,9 +92,10 @@ export async function loginAction(
     throw error;
   }
 
-  // 4. Retrieve fresh session to determine redirect destination
+  // 4. Retrieve fresh session or demo role to determine redirect destination
   const session = await auth();
-  const userRole = session?.user?.role;
+  const demoRole = getDemoUser(email)?.role;
+  const userRole = session?.user?.role || demoRole;
 
   let destination = userRole ? `/portal/${userRole}` : "/portal";
 

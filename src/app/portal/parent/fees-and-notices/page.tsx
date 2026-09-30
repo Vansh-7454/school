@@ -29,7 +29,7 @@ export default async function ParentFeesAndNoticesPage() {
       </div>
 
       {/* Illustrative Fee Status Card (Demo Only) */}
-      <div className="bg-white rounded-3xl p-6 sm:p-8 border border-[#0B1B3A]/10 shadow-xs space-y-6">
+      <div className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 border border-[#0B1B3A]/10 shadow-xs space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-[#0B1B3A]/10">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-2xl bg-[#0B1B3A] text-[#C9A24B] flex items-center justify-center">

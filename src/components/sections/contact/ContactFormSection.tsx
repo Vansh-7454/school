@@ -68,7 +68,7 @@ export function ContactFormSection() {
 
         {/* Form Card or Success Screen */}
         <ScrollReveal delay={0.1}>
-          <Card variant="dark" className="p-8 sm:p-12 relative">
+          <Card variant="dark" className="p-5 sm:p-10 md:p-12 relative">
             {isSubmitted ? (
               /* Success Screen */
               <div className="text-center py-10 sm:py-14 space-y-6">
@@ -126,8 +126,8 @@ export function ContactFormSection() {
                         name="name"
                         id="contact-name"
                         required
-                        placeholder="e.g. Marcus Sterling"
-                        className={`w-full h-12 pl-10 pr-4 rounded-[14px] bg-white/5 border text-sm text-[#FBF6EA] placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-[#C9A24B] transition-colors ${
+                        placeholder="Marcus Sterling"
+                        className={`w-full h-12 pl-10 pr-4 rounded-[14px] bg-white/5 border text-base sm:text-sm text-[#FBF6EA] placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-[#C9A24B] transition-colors ${
                           state.errors?.name
                             ? "border-rose-500 focus:border-rose-500"
                             : "border-white/15 focus:border-[#C9A24B]"
@@ -159,7 +159,7 @@ export function ContactFormSection() {
                         id="contact-email"
                         required
                         placeholder="marcus.sterling@example.com"
-                        className={`w-full h-12 pl-10 pr-4 rounded-[14px] bg-white/5 border text-sm text-[#FBF6EA] placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-[#C9A24B] transition-colors ${
+                        className={`w-full h-12 pl-10 pr-4 rounded-[14px] bg-white/5 border text-base sm:text-sm text-[#FBF6EA] placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-[#C9A24B] transition-colors ${
                           state.errors?.email
                             ? "border-rose-500 focus:border-rose-500"
                             : "border-white/15 focus:border-[#C9A24B]"
@@ -191,7 +191,7 @@ export function ContactFormSection() {
                       id="contact-subject"
                       required
                       defaultValue=""
-                      className={`w-full h-12 pl-10 pr-4 rounded-[14px] bg-[#0e1d3d] border text-sm text-[#FBF6EA] focus:outline-none focus:ring-2 focus:ring-[#C9A24B] transition-colors ${
+                      className={`w-full h-12 pl-10 pr-4 rounded-[14px] bg-[#0e1d3d] border text-base sm:text-sm text-[#FBF6EA] focus:outline-none focus:ring-2 focus:ring-[#C9A24B] transition-colors ${
                         state.errors?.subject
                           ? "border-rose-500 focus:border-rose-500"
                           : "border-white/15 focus:border-[#C9A24B]"
@@ -232,7 +232,7 @@ export function ContactFormSection() {
                       required
                       rows={5}
                       placeholder="Please share the details of your inquiry, including any dates or specific questions..."
-                      className={`w-full pl-10 pr-4 py-3 rounded-[14px] bg-white/5 border text-sm text-[#FBF6EA] placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-[#C9A24B] transition-colors resize-y ${
+                      className={`w-full pl-10 pr-4 py-3 rounded-[14px] bg-white/5 border text-base sm:text-sm text-[#FBF6EA] placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-[#C9A24B] transition-colors resize-y ${
                         state.errors?.message
                           ? "border-rose-500 focus:border-rose-500"
                           : "border-white/15 focus:border-[#C9A24B]"

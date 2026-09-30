@@ -101,9 +101,9 @@ export function LearningJourneySection() {
         align="center"
       />
 
-      {/* Stage Selector Tabs */}
-      <div className="flex justify-center mb-10 overflow-x-auto pb-2 scrollbar-none">
-        <div className="inline-flex p-1.5 rounded-full bg-white border border-[#C9A24B]/35 shadow-sm gap-1 sm:gap-2">
+      {/* Stage Selector Tabs (Horizontally scrollable chips on mobile) */}
+      <div className="flex justify-start sm:justify-center mb-8 sm:mb-10 overflow-x-auto pb-2 scrollbar-none px-4 -mx-4 sm:mx-0 snap-x">
+        <div className="inline-flex p-1.5 rounded-full bg-white border border-[#C9A24B]/35 shadow-sm gap-1 sm:gap-2 shrink-0">
           {STAGES.map((s, idx) => {
             const isActive = activeTab === idx;
             return (
@@ -112,7 +112,7 @@ export function LearningJourneySection() {
                 type="button"
                 onClick={() => setActiveTab(idx)}
                 className={cn(
-                  "relative px-4 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-300 whitespace-nowrap cursor-pointer",
+                  "relative px-4 sm:px-6 min-h-[44px] rounded-full text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-300 whitespace-nowrap cursor-pointer flex items-center justify-center snap-start",
                   isActive
                     ? "text-[#0B1B3A] shadow-sm"
                     : "text-[#0B1B3A]/70 hover:text-[#0B1B3A] hover:bg-[#FBF6EA]/50"
@@ -142,7 +142,7 @@ export function LearningJourneySection() {
             exit={{ opacity: 0, y: -15 }}
             transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
           >
-            <Card variant="light" className="p-8 sm:p-12 md:p-14">
+            <Card variant="light" className="p-5 sm:p-10 md:p-14">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
                 {/* Left Overview Column */}
                 <div className="lg:col-span-6 space-y-5">

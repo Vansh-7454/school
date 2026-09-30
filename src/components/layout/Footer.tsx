@@ -49,10 +49,10 @@ export function Footer() {
         aria-hidden="true"
       />
 
-      <Container className="pt-16 pb-12 relative z-10">
+      <Container className="pt-12 sm:pt-16 pb-12 relative z-10">
         {/* Top Newsletter Card */}
-        <div className="relative rounded-[24px] p-8 sm:p-10 mb-16 border border-[#C9A24B]/25 bg-gradient-to-r from-[#0B1B3A]/90 via-[#12274A]/80 to-[#0B1B3A]/90 backdrop-blur-md shadow-2xl">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div className="relative rounded-[24px] p-5 sm:p-10 mb-12 sm:mb-16 border border-[#C9A24B]/25 bg-gradient-to-r from-[#0B1B3A]/90 via-[#12274A]/80 to-[#0B1B3A]/90 backdrop-blur-md shadow-2xl">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
             <div className="lg:col-span-6 space-y-2">
               <span className="text-xs font-semibold tracking-[0.25em] text-[#C9A24B] uppercase">
                 Stay Connected
@@ -60,13 +60,13 @@ export function Footer() {
               <h3 className="font-serif text-2xl sm:text-3xl text-cream-100 font-semibold">
                 Subscribe to The Aurelia Chronicle
               </h3>
-              <p className="text-sm text-cream-100/70 max-w-lg">
+              <p className="text-xs sm:text-sm text-cream-100/70 max-w-lg">
                 Receive termly dispatches, academic achievements, prospective parent event
                 invitations, and cultural gala highlights directly to your inbox.
               </p>
             </div>
 
-            <div className="lg:col-span-6">
+            <div className="lg:col-span-6 w-full">
               {subscribed ? (
                 <div className="flex items-center gap-3 p-4 rounded-xl bg-gold-500/15 border border-[#C9A24B]/40 text-gold-200">
                   <CheckCircle2 strokeWidth={1.75} className="w-5 h-5 text-[#C9A24B] shrink-0" />
@@ -77,9 +77,9 @@ export function Footer() {
               ) : (
                 <form
                   onSubmit={handleSubscribe}
-                  className="flex flex-col sm:flex-row gap-3"
+                  className="flex flex-col sm:flex-row gap-3 w-full"
                 >
-                  <div className="relative flex-1">
+                  <div className="relative flex-1 w-full">
                     <Mail strokeWidth={1.75} className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-cream-100/40" />
                     <input
                       type="email"
@@ -87,10 +87,10 @@ export function Footer() {
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="Enter your email address"
                       required
-                      className="w-full h-12 pl-11 pr-4 rounded-[14px] bg-[#0B1B3A]/70 border border-cream-100/20 text-cream-100 placeholder:text-cream-100/40 text-sm focus:outline-none focus:border-[#C9A24B] focus:ring-2 focus:ring-[#C9A24B] transition-colors"
+                      className="w-full h-12 pl-11 pr-4 rounded-[14px] bg-[#0B1B3A]/70 border border-cream-100/20 text-cream-100 placeholder:text-cream-100/40 text-base sm:text-sm focus:outline-none focus:border-[#C9A24B] focus:ring-2 focus:ring-[#C9A24B] transition-colors"
                     />
                   </div>
-                  <Button type="submit" variant="primary" size="md" showArrow>
+                  <Button type="submit" variant="primary" size="md" showArrow className="w-full sm:w-auto">
                     Subscribe
                   </Button>
                 </form>
@@ -100,9 +100,9 @@ export function Footer() {
         </div>
 
         {/* Main Footer Links & Information */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12 border-b border-cream-100/10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-8 pb-12 border-b border-cream-100/10">
           {/* Brand Column */}
-          <div className="lg:col-span-4 space-y-6">
+          <div className="col-span-full lg:col-span-4 space-y-6">
             <Logo size="lg" variant="light" href="/" />
             <p className="text-sm text-cream-100/70 leading-relaxed max-w-sm">
               {schoolInfo.tagline}. Established in {schoolInfo.founded}, fostering an inclusive,
@@ -131,9 +131,9 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Quick Links Columns */}
+          {/* Quick Links Columns (2 columns on mobile) */}
           {footerQuickLinks.map((section, idx) => (
-            <div key={idx} className="lg:col-span-2 space-y-4">
+            <div key={idx} className="col-span-1 sm:col-span-1 lg:col-span-2 space-y-4">
               <h4 className="font-serif text-cream-100 text-lg font-semibold tracking-wide">
                 {section.title}
               </h4>
@@ -154,7 +154,7 @@ export function Footer() {
           ))}
 
           {/* Contact Details Column */}
-          <div className="lg:col-span-2 space-y-4">
+          <div className="col-span-full sm:col-span-1 lg:col-span-2 space-y-4">
             <h4 className="font-serif text-cream-100 text-lg font-semibold tracking-wide">
               Campus Visit
             </h4>
@@ -190,11 +190,11 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-cream-100/50">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-cream-100/50 text-center sm:text-left">
           <p>
             © {new Date().getFullYear()} {schoolInfo.name}. All rights reserved.
           </p>
-          <div className="flex flex-wrap items-center gap-6">
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-x-6 gap-y-2">
             <Link href="/about" className="hover:text-gold-300 transition-colors">
               Privacy Notice
             </Link>

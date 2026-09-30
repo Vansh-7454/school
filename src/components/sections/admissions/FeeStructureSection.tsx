@@ -92,7 +92,7 @@ export function FeeStructureSection() {
             <ScrollReveal key={tier.id} delay={idx * 0.08}>
               <Card
                 variant={tier.popular ? "dark" : "light"}
-                className={`p-8 sm:p-9 flex flex-col justify-between h-full relative ${
+                className={`p-5 sm:p-8 md:p-9 flex flex-col justify-between h-full relative ${
                   tier.popular ? "border-2 border-[#C9A24B] shadow-2xl" : ""
                 }`}
               >
